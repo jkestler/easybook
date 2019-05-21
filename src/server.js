@@ -1,18 +1,32 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 5001;
+const app = require('./app');
+const http = require('http');
+const port = normalizePort(process.env.PORT || "5001");
+app.set("port", port);
 
-app.get('/api/customers', (req, res) => {
-  const customers = [
-    { id: 1, firstName: 'Jonathan', lastName: 'Kestler' },
-    { id: 2, firstName: 'Lucy', lastName: 'Kestler'},
-    { id: 3, firstName: 'Buster', lastName: 'Kestler'}
-  ];
+const server = http.createServer(app);
 
-  res.json(customers);
-  
+function normalizePort(val) {
+  const port = parseInt(val, 10);
+  if (isNaN(port)) {
+    return val;
+  }
+  if (port >= 0) {
+    return port;
+  }
+  return false;
+}
+
+server.listen(port);
+
+
+
+server.on("listening", () => {
+  console.log(`server is listening for requests on port ${server.address().port}`);
 });
 
-app.listen(port, (req, res) => {
-  console.log(`server listening on port: ${port}`);
-});
+
+
+
+// app.listen(port, (req, res) => {
+//   console.log(`server listening on port: ${port}`);
+// });
