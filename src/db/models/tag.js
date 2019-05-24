@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   Tag.associate = function(models) {
-    Tag.belongsToMany(models.Bookmarks, {
+    Tag.belongsToMany(models.Bookmark, {
       through: 'TagBookmarks',
       as: 'bookmarks',
       foreignKey: 'tagId'

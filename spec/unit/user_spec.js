@@ -33,9 +33,11 @@ describe('User', () => {
       .catch((err) => {
         console.log(err);
         done();
-      })
-    })
+      });
+    });
 
-  })
+  });
+
+  it('should not create a User without an invalid e-mail or password')
 
 });
