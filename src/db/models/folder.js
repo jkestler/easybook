@@ -17,11 +17,6 @@ module.exports = (sequelize, DataTypes) => {
       as: 'bookmarks'
     });
     
-    Folder.belongsTo(models.User, {
-      foreignKey: 'userId',
-      onDelete: 'CASCADE'
-    });
-    
   };
   return Folder;
 };

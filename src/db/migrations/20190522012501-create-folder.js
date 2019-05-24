@@ -23,6 +23,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Folders');
+    return queryInterface.dropTable('Folders');ls
   }
 };
