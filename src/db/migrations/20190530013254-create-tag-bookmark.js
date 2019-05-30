@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('TagBookmarks', {
+    return queryInterface.createTable('TagBookmark', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -10,11 +10,23 @@ module.exports = {
       },
       bookmarkId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Bookmarks',
+          key: 'id',
+          as: 'bookmarkId'
+        }
       },
       tagId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Tags',
+          key: 'id',
+          as: 'tagId'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -27,6 +39,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('TagBookmarks');
+    return queryInterface.dropTable('TagBookmark');
   }
 };

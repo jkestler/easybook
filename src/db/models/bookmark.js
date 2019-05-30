@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   
   Bookmark.associate = function(models) {
     Bookmark.belongsToMany(models.Tag, {
-      through: 'TagBookmarks',
+      through: models.TagBookmark,
       as: 'tags',
       foreignKey: 'bookmarkId'
     });
