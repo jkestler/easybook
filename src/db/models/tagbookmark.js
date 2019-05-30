@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var TagBookmarks = sequelize.define('TagBookmark', {
+  var TagBookmark = sequelize.define('TagBookmark', {
     bookmarkId: {
       type: DataTypes.INTEGER,
       allowNull: false,

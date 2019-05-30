@@ -38,6 +38,41 @@ describe('User', () => {
 
   });
 
-  it('should not create a User without an invalid e-mail or password')
+  it('should not create a User without an invalid e-mail or password', (done) => {
+    User.create({
+      username: 'Jkest90',
+      email: 'jkest90',
+    })
+    .then((user) => {
+      done();
+    })
+    .catch((err) => {
+      expect(err.message).toContain('Validation error: must be a valid email');
+      // console.log(err);
+      done();
+    });
+  });
 
+  it("should not create a user with an email already taken", (done) => {
+    User.create({
+      username: 'jkest90',
+      email: 'user@example.com',
+      password: '1234567890'
+    })
+    .then((user) => {
+      User.create({
+        username: 'jkest90',
+        email: 'user@example.com',
+        password: '12345678902'
+      })
+      .then((user) => {
+        done();
+      })
+      .catch((err) => {
+        console.log(err.message);
+        expect(err.message).toContain("Validation error");
+        done();
+      });
+    });
+  });
 });
