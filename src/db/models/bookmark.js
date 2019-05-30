@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: 'https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image'
     },
-    userId: {
+    folderId: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
@@ -37,10 +37,10 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     });
 
-    Bookmark.belongsTo(models.User, {
-      foreignKey: 'userId',
-      onDelete: 'CASCADE'
-    })
+    // Bookmark.belongsTo(models.User, {
+    //   foreignKey: 'userId',
+    //   onDelete: 'CASCADE'
+    // })
   };
 
   return Bookmark;

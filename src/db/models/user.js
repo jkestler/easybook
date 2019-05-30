@@ -21,9 +21,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   User.associate = function(models) {
-    User.hasMany(models.Bookmark, {
+    User.hasMany(models.Folder, {
       foreignKey: 'userId',
-      as: 'bookmarks'
+      as: 'folders'
     });
   };
 

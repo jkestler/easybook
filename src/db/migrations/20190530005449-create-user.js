@@ -6,7 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       email: {
         allowNull: false,
@@ -18,6 +18,7 @@ module.exports = {
       },
       username: {
         allowNull: false,
+        unique: true,
         type: Sequelize.STRING
       },
       password: {
@@ -38,14 +39,3 @@ module.exports = {
     return queryInterface.dropTable('Users');
   }
 };
-
-
-// userId: {
-//   type: Sequelize.INTEGER,
-//   onDelete: 'CASCADE',
-//   allowNull: false,
-//   references: {
-//      model: 'Users',
-//      key: 'id',
-//      as: 'userId'
-//   },

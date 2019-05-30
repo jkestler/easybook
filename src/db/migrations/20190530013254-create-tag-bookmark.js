@@ -9,9 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       bookmarkId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       tagId: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

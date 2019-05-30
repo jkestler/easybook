@@ -18,13 +18,13 @@ module.exports = {
       },
       description: {
         allowNull: false,
-        defaultValue: "This bookmark has no description.",
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: 'This bookmark has no description.'
       },
       screenshot: {
         allowNull: false,
-        defaultValue: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: 'https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image'
       },
       createdAt: {
         allowNull: false,
@@ -35,25 +35,15 @@ module.exports = {
         type: Sequelize.DATE
       },
       folderId: {
-        allowNull: true,
-        type: DataTypes.INTEGER,
-        onDelete: "CASCADE",
-        references: {
-          model: "Folders",
-          key: "id",
-          as: "folderId"
-        }
-      },
-      userId: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
-        allowNull: false,
         references: {
-           model: 'Users',
-           key: 'id',
-           as: 'userId'
-        },
-     }
+          model: 'Folders',
+          key: 'id',
+          as: 'folderId'
+        }
+      }
       
     });
   },
