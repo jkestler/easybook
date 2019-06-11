@@ -4,24 +4,27 @@ module.exports = (sequelize, DataTypes) => {
     tagName: {
       allowNull: false,
       type: DataTypes.STRING
+    },
+    bookmarkId: {
+      allowNull: false,
+      type: DataTypes.INTEGER
     }
   }, {});
 
   Tag.associate = function(models) {
-    Tag.belongsToMany(models.Bookmark, {
-      through: models.TagBookmark,
-      as: 'bookmarks',
-      foreignKey: 'tagId'
-    })
+    Tag.belongsTo(models.Bookmark, {
+      foreignKey: "bookmarkId",
+      onDelete: "CASCADE"
+    });
   };
-
   return Tag;
 };
 
-// Tag.belongsTo(models.Bookmark, {
-//   foreignKey: "bookmarkId",
-//   onDelete: "CASCADE"
-// });
+// Tag.belongsToMany(models.Bookmark, {
+//   through: models.TagBookmark,
+//   as: 'bookmarks',
+//   foreignKey: 'tagId'
+// })
 
 // bookmarkId: {
 //   type: DataTypes.INTEGER,

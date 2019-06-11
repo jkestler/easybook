@@ -19,6 +19,17 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      bookmarkId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Bookmarks',
+          key: 'id',
+          as: 'bookmarkId'
+        }
+
       }
     });
   },

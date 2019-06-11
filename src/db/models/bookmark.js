@@ -26,21 +26,22 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   
   Bookmark.associate = function(models) {
-    Bookmark.belongsToMany(models.Tag, {
-      through: models.TagBookmark,
-      as: 'tags',
-      foreignKey: 'bookmarkId'
+    
+    Bookmark.hasMany(models.Tag, {
+      foreignKey: 'bookmarkId',
+      as: 'tags'
     });
-
+    
     Bookmark.belongsTo(models.Folder, {
       foreignKey: 'folderId',
       onDelete: 'CASCADE'
     });
-
-    // Bookmark.belongsTo(models.User, {
-    //   foreignKey: 'userId',
-    //   onDelete: 'CASCADE'
-    // })
+    
+    // Bookmark.belongsToMany(models.Tag, {
+    //   through: models.TagBookmark,
+    //   as: 'tags',
+    //   foreignKey: 'bookmarkId'
+    // });
   };
 
   return Bookmark;
