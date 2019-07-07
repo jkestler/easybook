@@ -17,7 +17,7 @@ module.exports = {
     })
     .catch((err) => {
       callback(err);
-      console.log(err);
+      console.log('ERROR', err);
     })
   }
 

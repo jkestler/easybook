@@ -8,16 +8,14 @@ describe("routes : users", () => {
 
       beforeEach((done) => {
 
-        sequelize.sync({
-            force: true
-          })
-          .then(() => {
-            done();
-          })
-          .catch((err) => {
-            console.log(err);
-            done();
-          });
+        sequelize.sync({ force: true })
+        .then(() => {
+          done();
+        })
+        .catch((err) => {
+          console.log(err);
+          done();
+        });
 
       });
 
@@ -35,9 +33,9 @@ describe("routes : users", () => {
               },
               body: {
                 username: 'jkestler',
-                email: "jkestler@gmail.com",
-                password: "123456789",
-                passwordConfirmation: "123456789"
+                email: 'jkest90@gmail.com',
+                password: '123456789',
+                passwordConfirmation: '123456789'
               },
               json: true
             }
@@ -45,8 +43,7 @@ describe("routes : users", () => {
             request.post(options,
               (err, res, body) => {
 
-                User.findOne({
-                  where: { username: "jkestler" }})
+                User.findOne({where: {username: 'jkestler' }})
                   .then((user) => {
                     this.user = user;
                     expect(user).not.toBeNull();

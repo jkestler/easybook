@@ -4,7 +4,6 @@ const expressValidator = require('express-validator');
 const session = require('express-session');
 const flash = require('express-flash');
 const passportConfig = require('./passport-config');
-const passport = require('passport');
 
 require('dotenv').config();
 
@@ -28,7 +27,7 @@ module.exports = {
     }));
 
     app.use(flash());
-
+    
     passportConfig.init(app);
 
     app.use((req, res, next) => {

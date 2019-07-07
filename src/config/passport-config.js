@@ -9,18 +9,20 @@ module.exports = {
     app.use(passport.session());
 
     passport.use(new LocalStrategy(
+
       function(username, password, done) {
-        User.findOne({
-        where: { username }})
+        User.findOne({ where: { username: username } })
         .then((user) => {
           if (!user || !authHelper.comparePass(password, user.password)) {
             return done(null, false, {
               message: "Invalid email or password"
             });
+          } else {
+            return done(null, user);
           }
-          return done(null, user);
         })
       }
+      
     ));
 
     passport.serializeUser((user, callback) => {
