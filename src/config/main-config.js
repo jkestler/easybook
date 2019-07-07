@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const session = require('express-session');
 const flash = require('express-flash');
+const passportConfig = require('./passport-config');
+const passport = require('passport');
+
 require('dotenv').config();
 
 module.exports = {
@@ -15,7 +18,7 @@ module.exports = {
 
     app.use(expressValidator());
 
-    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
 
     app.use(session({
       secret: process.env.cookieSecret,
@@ -25,6 +28,8 @@ module.exports = {
     }));
 
     app.use(flash());
+
+    passportConfig.init(app);
 
     app.use((req, res, next) => {
       res.locals.currentUser = req.user;
