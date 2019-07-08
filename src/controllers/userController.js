@@ -20,7 +20,7 @@ module.exports =  {
           res.status(500).json(err.errors[0].message);
         } else {
           passport.authenticate('local')(req, res, () => {
-            res.json({id: user.id, username: user.email });
+            res.status(201).json({id: user.id, username: user.email });
             // res.json(newUser)
           })
         }
