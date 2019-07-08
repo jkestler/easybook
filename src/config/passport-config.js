@@ -9,17 +9,17 @@ module.exports = {
     app.use(passport.session());
 
     passport.use(new LocalStrategy(
-
-      function(username, password, done) {
-        User.findOne({ where: { username: username } })
+      // usernameField: 'username',
+      // emailField: 'email',
+      // passwordField: 'password'
+    // , 
+      (username, password, done) => {
+        User.findOne({ where: { username: email } })
         .then((user) => {
           if (!user || !authHelper.comparePass(user.password, password)) {
-            return done(null, false, {
-              message: "Invalid email or password"
-            });
-          } else {
-            return done(null, user);
-          }
+            return done(null, false, { message: "Invalid email or password" });
+          } 
+          return done(null, user);
         })
       }
 

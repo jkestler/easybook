@@ -13,16 +13,12 @@ module.exports =  {
       passwordConfirmation: req.body.passwordConfirmation 
     };
 
-    // console.log(newUser);
+    console.log("NEW USER:", newUser);
     userQueries.createUser(newUser, (err, user) => {
       if (err) {
         res.status(500).json(err.errors[0].message);
-        console.log("newUser", newUser);
-        console.log(err);
-        // res.redirect('/users/sign_up');
       } else {
         passport.authenticate('local')(req, res, () => {
-          console.log("USER:", user);
           res.json({id: user.id, username: user.username, email: user.email });
         })
       }
