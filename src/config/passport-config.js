@@ -11,14 +11,19 @@ module.exports = {
     passport.use(new LocalStrategy(
       // usernameField: 'username',
       // emailField: 'email',
-      // passwordField: 'password'
-    // , 
-      (username, password, done) => {
-        User.findOne({ where: { username: email } })
+      // passwordField: 'password',
+      // passwordConfirmation: 'passwordConfirmation'
+    // },
+    { usernameField: 'email' },
+      (email, password, done) => {
+        User.findOne({ where: { email } })
         .then((user) => {
-          if (!user || !authHelper.comparePass(user.password, password)) {
+          console.log("PASSWORD:", password);
+          console.log("USER.PASSWORD", user.password);
+          if (!user || !authHelper.comparePass(password, user.password)) {
             return done(null, false, { message: "Invalid email or password" });
           } 
+          console.log(user)
           return done(null, user);
         })
       }

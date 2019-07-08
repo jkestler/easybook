@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
    },
-   username: {
-     unique: true,
-     type: DataTypes.STRING,
-     allowNull: false,
-   },
+  //  username: {
+  //    unique: true,
+  //    type: DataTypes.STRING,
+  //    allowNull: false,
+  //  },
    password: {
       type: DataTypes.STRING,
       allowNull: false

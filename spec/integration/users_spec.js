@@ -28,8 +28,7 @@ describe("routes : users", () => {
           'Content-Type': 'application/json'
         },
         body: {
-          username: 'jkestler',
-          email: 'jkest90@gmail.com',
+          email: 'jkest6000@gmail.com',
           password: '123456789',
           passwordConfirmation: '123456789'
         },
@@ -38,11 +37,11 @@ describe("routes : users", () => {
   
       request.post(options,
         (err, res, body) => {
-          User.findOne({where: {username: 'jkestler' }})
+          User.findOne({where: {email: 'jkest6000@gmail.com' }})
             .then((user) => {
               this.user = user;
               expect(user).not.toBeNull();
-              expect(user.email).toBe("jkest90@gmail.com");
+              expect(user.email).toBe("jkest6000@gmail.com");
               expect(user.id).toBe(1);
               done();
             })

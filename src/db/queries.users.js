@@ -9,13 +9,11 @@ module.exports = {
     const salt = bcrypt.genSaltSync();
     const hashedPassword = bcrypt.hashSync(newUser.password, salt);
 
-     User.create({
-      username: newUser.username,
+    return User.create({
       email: newUser.email,
       password: hashedPassword
     })
-    .then((user) => {
-      this.user = user;
+    .then((user) => { 
       console.log(user);  // ! Program is getting to here
       callback(null, user);
     })

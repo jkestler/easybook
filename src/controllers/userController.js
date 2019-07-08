@@ -7,27 +7,29 @@ module.exports =  {
   create(req, res, next) {
 
     let newUser = {
-      username: req.body.username,
       email: req.body.email,
       password: req.body.password,
       passwordConfirmation: req.body.passwordConfirmation 
     };
 
     console.log("NEW USER:", newUser);
-    userQueries.createUser(newUser, (err, user) => {
-      if (err) {
-        res.status(500).json(err.errors[0].message);
-      } else {
-        passport.authenticate('local')(req, res, () => {
-          res.json({id: user.id, username: user.username, email: user.email });
-        })
-      }
-    });
 
+    userQueries.createUser(newUser, (err, user) => {
+        if (err) {
+          console.log(err)
+          res.status(500).json(err.errors[0].message);
+        } else {
+          passport.authenticate('local')(req, res, () => {
+            res.json({id: user.id, username: user.email });
+            // res.json(newUser)
+          })
+        }
+      });
+
+    } 
 
   }
-  
-};
+
   // app.get('/loginUser', (req, res, next) => {
   //   passport.authenticate('login', (effrr, user, info) => {
   //     if (err) {

@@ -19,14 +19,14 @@ describe('User', () => {
 
     it('should create a User object with a valid username, email, & password', (done) => {
       User.create({
-        username: 'Jkest90',
-        email: 'jkest90@gmail.com', 
+        // username: 'Jkest900',
+        email: 'jkest900@gmail.com', 
         password: '1234567890'
       })
       .then((user) => {
         expect(user.id).toBe(1);
-        expect(user.username).toBe('Jkest90');
-        expect(user.email).toBe('jkest90@gmail.com');
+        // expect(user.username).toBe('Jkest900');
+        expect(user.email).toBe('jkest900@gmail.com');
         expect(user.password).toBe('1234567890');
         done();
       })
@@ -40,7 +40,7 @@ describe('User', () => {
 
   it('should not create a User without an invalid e-mail or password', (done) => {
     User.create({
-      username: 'Jkest90',
+      // username: 'Jkest90',
       email: 'jkest90',
     })
     .then((user) => {
