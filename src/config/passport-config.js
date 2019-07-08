@@ -13,7 +13,7 @@ module.exports = {
       function(username, password, done) {
         User.findOne({ where: { username: username } })
         .then((user) => {
-          if (!user || !authHelper.comparePass(password, user.password)) {
+          if (!user || !authHelper.comparePass(user.password, password)) {
             return done(null, false, {
               message: "Invalid email or password"
             });
@@ -22,7 +22,7 @@ module.exports = {
           }
         })
       }
-      
+
     ));
 
     passport.serializeUser((user, callback) => {

@@ -5,7 +5,7 @@ const validation = require('./validation');
 const userController = require('../controllers/userController');
 
 // register/create user
-router.post('/users', userController.create);
+router.post('/user', userController.create);
 
 // validation.validateUsers
 

@@ -1,6 +1,5 @@
 const userQueries = require('../db/queries.users.js');
 const passport = require('passport');
-const User = require('../db/models').User;
 
 
 module.exports =  {
@@ -14,24 +13,27 @@ module.exports =  {
       passwordConfirmation: req.body.passwordConfirmation 
     };
 
-    console.log(newUser);
-
+    // console.log(newUser);
     userQueries.createUser(newUser, (err, user) => {
       if (err) {
         res.status(500).json(err.errors[0].message);
+        console.log("newUser", newUser);
+        console.log(err);
         // res.redirect('/users/sign_up');
       } else {
         passport.authenticate('local')(req, res, () => {
-          res.json({id: req.user.id, username: username, email: user.email });
+          console.log("USER:", user);
+          res.json({id: user.id, username: user.username, email: user.email });
         })
       }
-    })
+    });
+
 
   }
   
 };
   // app.get('/loginUser', (req, res, next) => {
-  //   passport.authenticate('login', (err, user, info) => {
+  //   passport.authenticate('login', (effrr, user, info) => {
   //     if (err) {
   //       console.log(err);
   //     }
