@@ -1,26 +1,18 @@
 
 
 .App {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   font-family: 'Lato', 'Arial', sans-serif;
 }
 
 
 /* ! NavBar */ 
 
-
-.nav-items {
-  margin-left: 60rem;
-  height: 5vh;
+#root > div > div:nth-child(1) > nav > div > ul {
+  margin-left: 1100px !important;
 }
-
-.nav-brand {
-  margin-left: 40px;
-}
-
 
 /* ! Landing */ 
-
 .landing {
   position: relative;
 }
@@ -33,7 +25,6 @@
   background-color: rgba(42, 61, 208, 0.085) ;
   background-blend-mode: multiply;
   /* filter: blur(1px); */
-
 
 }
 
@@ -62,9 +53,9 @@
 
 img {
   display: block;
-  height: 200px;
-  width: 200px;
-  margin: 0 25%;
+  height: 110px;
+  width: 110px;
+  margin: 0% 25%;
 }
 
 .landing-features h4 {

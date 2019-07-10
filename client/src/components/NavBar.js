@@ -1,15 +1,8 @@
-import React from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
- } from 'reactstrap';
+import React, { Component } from 'react';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-export default class Example extends React.Component {
+ class NavBar extends Component {
   constructor(props) {
     super(props);
 
@@ -24,18 +17,19 @@ export default class Example extends React.Component {
     });
   }
   render() {
+    // const { user } = this.props.user;
     return (
       <div>
-        <Navbar className="navigation" color="light" light  expand="md">
-          <NavbarBrand className="nav-brand" href="/">easyBook</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
+        <Navbar className='navbar' color='dark' dark expand='md'>
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="nav-items" navbar>
-              <NavItem className="nav-item"> 
-                <NavLink href="/components/">Sign Up</NavLink>
+          <NavbarToggler onClick={this.toggle} />
+          <Link to='/'> easyBook </Link>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <Link to='/signup'>Sign Up</Link>
               </NavItem>
-              <NavItem className="nav-item"> 
-                <NavLink href="https://github.com/reactstrap/reactstrap">Sign In</NavLink>
+              <NavItem>
+                <Link to='/signin'>Sign In</Link>
               </NavItem>
             </Nav>
           </Collapse>
@@ -44,3 +38,5 @@ export default class Example extends React.Component {
     );
   }
 }
+
+export default NavBar;

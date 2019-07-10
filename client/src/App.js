@@ -3,6 +3,7 @@ import './App.css';
 import Customers from './components/customers/customers';
 import Landing from './components/Landing.js';
 import NavBar from './components/NavBar.js';
+import Signup from './components/Signup.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
           <NavBar />
           <Switch> 
             <Route exact path='/' component={Landing} />
+            <Route path='/signup' component={Signup} />
           </Switch>
         </div>
       </BrowserRouter>
@@ -20,4 +22,4 @@ class App extends Component {
   }
 }
  
-export default App;
+export default App; 
