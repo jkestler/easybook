@@ -1,28 +1,27 @@
-
-
 .App {
   /* box-sizing: border-box; */
   font-family: 'Lato', 'Arial', sans-serif;
 }
 
 
-/* ! NavBar */ 
+/* ! NavBar */
 
-#root > div > div:nth-child(1) > nav > div > ul {
+#root>div>div:nth-child(1)>nav>div>ul {
   margin-left: 1100px !important;
 }
 
-/* ! Landing */ 
+/* ! Landing */
 .landing {
   position: relative;
 }
+
 .landing-background {
   height: 65vh;
   width: 100%;
-  background-image: url('./assets/img/book-img.jpg');  
+  background-image: url('./assets/img/book-img.jpg');
   background-size: cover;
   background-position: right;
-  background-color: rgba(42, 61, 208, 0.085) ;
+  background-color: rgba(42, 61, 208, 0.085);
   background-blend-mode: multiply;
   /* filter: blur(1px); */
 
@@ -40,12 +39,13 @@
   width: 100%;
 
 }
+
 .heading-text h1 {
   font-size: 50px;
 }
 
 .landing-features {
-  background-color: #ffffff; 
+  background-color: #ffffff;
   height: 25vh;
   width: 95vw;
 
@@ -74,6 +74,7 @@ img {
   /* right: 2%; */
   font-size: 1.5em;
 }
+
 /* 
 
 .jumbotron {
@@ -102,5 +103,5 @@ img {
   height: 10rem;
   margin: auto;
   /* margin: 10px; */
-  /* flex-shrink: 0 */
+/* flex-shrink: 0 */
 /* }  */

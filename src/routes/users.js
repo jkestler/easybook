@@ -6,6 +6,8 @@ const userController = require('../controllers/userController');
 
 // register/create user
 router.post('/user', validation.validateUsers, userController.create);
+router.post('/user/signin', validation.validateUsers, userController.signIn);
+router.get('/user/signout', userController.signOut);
 
 // validation.validateUsers
 
@@ -13,3 +15,5 @@ router.post('/user', validation.validateUsers, userController.create);
 
 
 module.exports = router;
+
+// after registered redirect to /user/bookmarks

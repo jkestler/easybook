@@ -21,12 +21,26 @@ module.exports =  {
         } else {
           passport.authenticate('local')(req, res, () => {
             res.status(201).json({id: user.id, username: user.email });
-            // res.json(newUser)
           })
         }
       });
 
-    } 
+    },
+
+    signIn(req, res, next) {
+      passport.authenticate('local')(req, res, () => {
+        if(req.user) {
+          req.flash('notice', 'You\'ve successfully signed in!');
+          res.status(200).json({id: req.user.id, username: req.user.email });
+        }
+      });
+    },
+
+    signOut(req, res, next) {
+      req.logout();
+      req.flash('notice', 'You\'ve successfully signed out!');
+      res.json({success: true});
+    }
 
   }
 

@@ -1,42 +1,70 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, } from 'reactstrap';
 import { Link } from 'react-router-dom';
+// import Bootstrap from 'bootstrap';
+import axios from 'axios'; 
 
  class NavBar extends Component {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
     };
+
+
   }
-  toggle() {
+
+  toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
-  render() {
-    // const { user } = this.props.user;
-    return (
-      <div>
-        <Navbar className='navbar' color='dark' dark expand='md'>
-          <Collapse isOpen={this.state.isOpen} navbar>
-          <NavbarToggler onClick={this.toggle} />
-          <Link to='/'> easyBook </Link>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Link to='/signup'>Sign Up</Link>
-              </NavItem>
-              <NavItem>
-                <Link to='/signin'>Sign In</Link>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
-    );
+
+  logout = (e) => {
+    e.preventDefault();
+    console.log('Loggin out...');
+    axios.post('/user/signout')
+    .then(res => {
+      if (res.status === 200) {
+        this.props.updateUser({
+          loggedIn: false,
+          email: null,
+          id: null
+        })
+      }
+    })
+    .catch((err) => {
+      console.log('Logout Error:', err);
+    });
   }
+
+  render() {
+    const loggedIn = this.props.loggedIn;
+    
+    return (
+
+      loggedIn ? (
+
+        <nav className='navbar navbar-light bg-light'>
+          <Link to='/' className='navbar-brand' >easyBook</Link>
+          <Link to='/' className='nav-link' onClick={this.props.updateUser}> Log Out</Link>
+        </nav>
+      
+      ) : (
+
+        <nav className='navbar navbar-light bg-light'> 
+          <Link to='/' className='navbar-brand'>easyBook</Link>
+          <Link to='/signin' className='nav-link'> Log In </Link>
+          <Link to='/signup' className='nav-link'> Sign Up</Link>
+        </nav>
+
+      )
+    )
+  }
+
 }
 
 export default NavBar;
+
+ 
