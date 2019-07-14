@@ -22,29 +22,45 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    // this.getUser();
+
   }
 
   updateUser = (userObject) => {
     this.setState(userObject)
   }
 
-  logoutUser = (userObject) => {
-    axios.get('/user/signout/')
-      .then((res => {
-        if (!res.data.user) {
+  signOut = () => {
+    axios.get('/user/signout')
+      .then(res => {
+        console.log('RESPONSE: ', res);
+        // if (!res.data.user) {
           this.setState({
             loggedIn: false,
             email: null,
-            id: null,
-          });
+            id: null
+          })
+        // }
+      })
+    }
+    // axios.get('/user/signout')
+    //   .then(res => {
+    //     if (!res.data.user) {
+    //       this.setState({
+    //         loggedIn: false,
+    //         email: null,
+    //         id: null
+    //       });
           
-        } else {
-          console.log('Could not sign out user...');
-        }
-        
-      }))
-  }
+    //     } else {
+    //       console.log('Could not sign out user...');
+    //     }
+    //   }
+    // )
+    // this.setState({
+    //   loggedIn: false,
+    //   email: null,
+    //   id: null
+    // })
   // getUser = () => {
   //   axios.get('/user/signin/')
   //     .then(res => {
@@ -74,7 +90,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <NavBar loggedIn={this.state.loggedIn} updateUser={this.logoutUser}  />
+          <NavBar loggedIn={this.state.loggedIn} signoutUser={this.signOut}  />
           <Switch> 
             <Route exact path='/' component={Landing} />
             <Route 

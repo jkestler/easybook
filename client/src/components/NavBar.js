@@ -21,34 +21,37 @@ import axios from 'axios';
     });
   }
 
-  logout = (e) => {
-    e.preventDefault();
-    console.log('Loggin out...');
-    axios.post('/user/signout')
-    .then(res => {
-      if (res.status === 200) {
-        this.props.updateUser({
-          loggedIn: false,
-          email: null,
-          id: null
-        })
-      }
-    })
-    .catch((err) => {
-      console.log('Logout Error:', err);
-    });
-  }
+  // logout = (e) => {
+  //   e.preventDefault();
+  //   console.log('Loggin out...');
+  //   axios.get('/user/signout')
+  //   .then(res => {
+  //     console.log('LOGOUT RESPONSE:', res);
+  //     this.props.updateUser({
+  //       loggedIn: false,
+  //       email: res.data.username,
+  //       id: res.data.id
+  //     })
+  //   })
+  //   .catch((err) => {
+  //     console.log('Logout Error:', err);
+  //   });
+  // }
+
+  // handleSignout = () => {
+  //   return this.props.signOut;
+  // }
 
   render() {
     const loggedIn = this.props.loggedIn;
-    
+    console.log(this.props);
     return (
 
       loggedIn ? (
 
         <nav className='navbar navbar-light bg-light'>
           <Link to='/' className='navbar-brand' >easyBook</Link>
-          <Link to='/' className='nav-link' onClick={this.props.updateUser}> Log Out</Link>
+          <Link to='/' className='nav-link' onClick={this.props.signoutUser}> Log Out</Link>
         </nav>
       
       ) : (

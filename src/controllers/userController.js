@@ -30,16 +30,15 @@ module.exports =  {
     signIn(req, res, next) {
       passport.authenticate('local')(req, res, () => {
         if(req.user) {
-          req.flash('notice', 'You\'ve successfully signed in!');
           res.status(200).json({id: req.user.id, username: req.user.email });
         }
       });
     },
 
     signOut(req, res, next) {
-      req.logout();
-      req.flash('notice', 'You\'ve successfully signed out!');
-      res.json({success: true});
+      console.log('BACKEND REQ:', req);
+      // req.logout();
+      res.status(200).json({success: true});
     }
 
   }
