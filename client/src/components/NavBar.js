@@ -39,19 +39,19 @@ import axios from 'axios';
   // }
 
   // handleSignout = () => {
-  //   return this.props.signOut;
+  //   return this.props.signOut()
   // }
 
   render() {
     const loggedIn = this.props.loggedIn;
-    console.log(this.props);
+    // console.log(this.props);
     return (
 
       loggedIn ? (
-
+ 
         <nav className='navbar navbar-light bg-light'>
           <Link to='/' className='navbar-brand' >easyBook</Link>
-          <Link to='/' className='nav-link' onClick={this.props.signoutUser}> Log Out</Link>
+          <Link to='/' className='nav-link' onClick={() => this.props.signOut}> Log Out</Link>
         </nav>
       
       ) : (

@@ -36,8 +36,8 @@ module.exports =  {
     },
 
     signOut(req, res, next) {
-      console.log('BACKEND REQ:', req);
-      // req.logout();
+      // console.log('BACKEND REQ:', req);
+      req.logout();
       res.status(200).json({success: true});
     }
 

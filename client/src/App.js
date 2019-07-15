@@ -19,6 +19,7 @@ class App extends Component {
       email: null,
       id: null,
     }
+
   }
 
   componentDidMount = () => {
@@ -32,14 +33,15 @@ class App extends Component {
   signOut = () => {
     axios.get('/user/signout')
       .then(res => {
+        // this.updateUser({loggedIn: false, email: null, id: null })
         console.log('RESPONSE: ', res);
-        // if (!res.data.user) {
+        if (!res.data.user) {
           this.setState({
             loggedIn: false,
             email: null,
             id: null
           })
-        // }
+        }
       })
     }
     // axios.get('/user/signout')
@@ -90,7 +92,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <NavBar loggedIn={this.state.loggedIn} signoutUser={this.signOut}  />
+          <NavBar loggedIn={this.state.loggedIn} signoutUser={() => this.signOut()}  />
           <Switch> 
             <Route exact path='/' component={Landing} />
             <Route 
@@ -99,7 +101,7 @@ class App extends Component {
                 <LoginForm
                   updateUser={this.updateUser}
               />}
-            />
+            /> 
             <Route 
               path='/signup'
               render={() =>
@@ -109,7 +111,7 @@ class App extends Component {
             />  
             {/* <Route 
               path='/bookmarks' 
-              component={Bookmarks}
+              component={Bookmarks} 
             /> */}
           </Switch>
         </div>
