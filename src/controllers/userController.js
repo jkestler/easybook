@@ -17,7 +17,7 @@ module.exports =  {
     userQueries.createUser(newUser, (err, user) => {
         if (err) {
           console.log(err)
-          res.status(500).json(err.errors[0].message);
+          res.status(500);
         } else {
           passport.authenticate('local')(req, res, () => {
             res.status(201).json({id: user.id, username: user.email });
@@ -36,7 +36,9 @@ module.exports =  {
     },
 
     signOut(req, res, next) {
+      console.log('REQ.USER', req.user);
       // console.log('BACKEND REQ:', req);
+      // console.log('BACKEND RESPONSE:', res);
       req.logout();
       res.status(200).json({success: true});
     }

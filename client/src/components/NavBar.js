@@ -51,7 +51,7 @@ import axios from 'axios';
  
         <nav className='navbar navbar-light bg-light'>
           <Link to='/' className='navbar-brand' >easyBook</Link>
-          <Link to='/' className='nav-link' onClick={() => this.props.signOut}> Log Out</Link>
+          <Link to='/' className='nav-link' onClick={this.props.signoutUser}> Log Out</Link>
         </nav>
       
       ) : (

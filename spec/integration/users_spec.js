@@ -52,6 +52,37 @@ describe("routes : users", () => {
           });
       });
     });
+
+    describe("GET /user/signout/", () => {
+      
+      it("should sign out a user", (done ) => {
+        const options = {
+          url: base,
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: {
+            email: 'lucy224@gmail.com',
+            password: '123456789',
+            passwordConfirmation: '123456789'
+          },
+          json: true
+        }
+
+        request.post(options, (err, res, body) => {
+          User.findOne({where: {email: 'lucy224@gmail.com' }})
+            .then((user) => {
+              this.user = user;
+              request.get(`${base}signout`, (err, res, body) => {
+                expect(user).toBeNull();
+                console.log(user);
+                done();
+              })
+            })
+          })
+      })
+    })
   });
       
       

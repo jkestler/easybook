@@ -20,7 +20,7 @@ module.exports = {
         .then((user) => {
           console.log("PASSWORD:", password);
           console.log("USER.PASSWORD", user.password);
-          if (!user || !authHelper.comparePass(password, user.password)) {
+          if (!user || !authHelper.comparePass(password, user.password)) { 
             return done(null, false, { message: "Invalid email or password" });
           } 
           console.log(user)
@@ -35,11 +35,12 @@ module.exports = {
     });
     
     passport.deserializeUser((id, callback) => {
-      User.findById(id)
+      User.findByPk(id)
         .then((user) => {
           callback(null, user);
         })
         .catch((err => {
+          console.log('TROUBLE LOGGING OUT USER:', err) 
           callback(err, user);
         }))
     });
