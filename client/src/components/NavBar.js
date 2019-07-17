@@ -15,11 +15,16 @@ import axios from 'axios';
 
   }
 
-  toggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+  componentDidUpdate = () => {
+    // JSON.parse(localStorage.getItem('loggedIn'));
+    // localStorage.getItem('loggedIn');
   }
+  
+  // toggle = () => {
+  //   this.setState({
+  //     isOpen: !this.state.isOpen
+  //   });
+  // }
 
   // logout = (e) => {
   //   e.preventDefault();
@@ -43,11 +48,11 @@ import axios from 'axios';
   // }
 
   render() {
-    const loggedIn = this.props.loggedIn;
+    // const loggedIn = this.props.loggedIn ;
     // console.log(this.props);
     return (
 
-      loggedIn ? (
+      this.props.loggedIn ? (
  
         <nav className='navbar navbar-light bg-light'>
           <Link to='/' className='navbar-brand' >easyBook</Link>
