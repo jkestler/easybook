@@ -56,15 +56,15 @@ import axios from 'axios';
  
         <nav className='navbar navbar-light bg-light'>
           <Link to='/' className='navbar-brand' >easyBook</Link>
-          <Link to='/' className='nav-link' onClick={this.props.signoutUser}> Log Out</Link>
+          <Link to='/' className='nav-link landing-nav' onClick={this.props.signoutUser}> Log Out</Link>
         </nav>
       
       ) : (
 
-        <nav className='navbar navbar-light bg-light'> 
+        <nav className='navbar navbar-light bg-light  '> 
           <Link to='/' className='navbar-brand'>easyBook</Link>
-          <Link to='/signin' className='nav-link'> Log In </Link>
-          <Link to='/signup' className='nav-link'> Sign Up</Link>
+          <Link to='/signin' className='nav-link landing-nav' > Log In </Link>
+          <Link to='/signup' className='nav-link' landing-nav> Sign Up</Link>
         </nav>
 
       )

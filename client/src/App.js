@@ -34,8 +34,11 @@ class App extends Component {
   
   componentDidMount = () => {
     this.setState({
-      loggedIn: JSON.parse(localStorage.getItem('loggedIn'))
+      loggedIn: JSON.parse(localStorage.getItem('loggedIn')),
     })
+    // this.setState({
+    //   email: JSON.parse(localStorage.getItem('email'))
+    // })
     // localStorage.getItem('loggedIn');
     // localStorage.getItem('email');
     // localStorage.getItem('id');
@@ -53,6 +56,8 @@ class App extends Component {
   updateUser = (userObject) => {
     this.setState(userObject);
     localStorage.setItem('loggedIn', true);
+    localStorage.setItem('email', this.state.email);
+    localStorage.setItem('id', this.state.id);
     // if (this.state.loggedIn) {
     //   localStorage.setItem('loggedIn', true);
     // }

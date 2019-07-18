@@ -6,14 +6,20 @@
 
 /* ! NavBar */
 
-#root>div>div:nth-child(1)>nav>div>ul {
+/* #root>div>div:nth-child(1)>nav>div>ul {
   margin-left: 1100px !important;
-}
+} */
 
 /* ! Landing */
 .landing {
   position: relative;
 }
+
+.landing-nav {
+  margin-left: auto
+}
+
+
 
 .landing-background {
   height: 65vh;
@@ -26,6 +32,7 @@
   /* filter: blur(1px); */
 
 }
+
 
 .heading-text {
   text-align: right;
@@ -53,9 +60,9 @@
 
 img {
   display: block;
-  height: 110px;
-  width: 110px;
-  margin: 0% 25%;
+  height: 100px;
+  width: 100px;
+  margin: 0% 35%;
 }
 
 .landing-features h4 {
@@ -63,9 +70,6 @@ img {
   color: rgb(86, 37, 37);
 }
 
-.feature-column {
-  /* padding: 20px 20px 20px; */
-}
 
 .feature-column p {
   /* position: absolute; */
