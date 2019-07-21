@@ -7,7 +7,7 @@ import NavBar from './components/NavBar.js';
 import SignupForm from './components/Signup.js';
 import LoginForm from './components/Login.js';
 import Bookmarks from './components/Bookmarks.js';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -64,8 +64,6 @@ class App extends Component {
 
   }
 
-
-
   signOut = () => {
     axios.get('/user/signout')
       .then(res => { 
@@ -102,10 +100,10 @@ class App extends Component {
                   updateUser={this.updateUser} 
               />}
             />  
-            {/* <Route 
+            <Route 
               path='/bookmarks' 
               component={Bookmarks} 
-            /> */}
+            />
           </Switch>
         </div>
       </BrowserRouter>

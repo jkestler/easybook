@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, } from 'reactstrap';
+// import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, } from 'reactstrap';
 import { Link } from 'react-router-dom';
 // import Bootstrap from 'bootstrap';
-import axios from 'axios'; 
+// import axios from 'axios'; 
 
  class NavBar extends Component {
   constructor(props) {

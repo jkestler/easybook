@@ -24,7 +24,7 @@ const Landing = (props) => {
         <Button> Sign Up! </Button>
       </div>
       <div className="landing-features"> 
-        <Row className="feature-row">
+        <div className="row feature-row">
 
           <Col lg="4" md="12" className="feature-column" >
               <img src={folderIcon} alt="folder"/>
@@ -45,7 +45,7 @@ const Landing = (props) => {
 
 
 
-        </Row>
+        </div>
       </div>
     </div>
   )
