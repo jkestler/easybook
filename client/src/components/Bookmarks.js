@@ -39,12 +39,12 @@ return (
     <div className="bg-light border-right" id="sidebar-wrapper">
       <div className="sidebar-heading">Folders </div>
       <div className="list-group list-group-flush">
-        <a href="/" className="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="/" className="list-group-item list-group-item-action bg-light">Shortcuts</a>
-        <a href="/" className="list-group-item list-group-item-action bg-light">Overview</a>
-        <a href="/" className="list-group-item list-group-item-action bg-light">Events</a>
-        <a href="/" className="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="/" className="list-group-item list-group-item-action bg-light">Status</a>
+        <a href="/" className="list-group-item list-group-item-action bg-light">Bootstrap</a>
+        <a href="/" className="list-group-item list-group-item-action bg-light">Bloc</a>
+        <a href="/" className="list-group-item list-group-item-action bg-light">Documentation</a>
+        <a href="/" className="list-group-item list-group-item-action bg-light">Courses</a>
+        <a href="/" className="list-group-item list-group-item-action bg-light">Github</a>
+        <a href="/" className="list-group-item list-group-item-action bg-light">Jobs</a>
       </div>
     </div>
     
@@ -69,13 +69,98 @@ return (
       </nav>
 
       <div className="container-fluid">
-        <h1 className="mt-4">Simple Sidebar</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on
-          larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional,
-          and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the
-          menu when clicked.</p>
-      </div>
+        <div class="row mt-2">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bookmark 1</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" class="btn btn-primary">View / Edit</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bookmark 2</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" class="btn btn-primary">View / Edit </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bookmark 3</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" class="btn btn-primary"> View / Edit </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bookmark 1</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" class="btn btn-primary">View / Edit</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bookmark 2</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" class="btn btn-primary">View / Edit </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bookmark 3</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" class="btn btn-primary"> View / Edit </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bookmark 1</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" class="btn btn-primary">View / Edit</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bookmark 2</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" class="btn btn-primary">View / Edit </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bookmark 3</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" class="btn btn-primary"> View / Edit </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> {/* End Container-fluid */}
+
+
+
+
     </div>
   </div>
 
