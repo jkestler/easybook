@@ -35,7 +35,7 @@ class LoginForm extends Component {
           email: res.data.username,
           id:  res.data.id
         }) 
-        this.setState({ redirectTo: '/' })
+        this.setState({ redirectTo: '/bookmarks' })
       }
     })
     .catch((err) => {
