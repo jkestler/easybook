@@ -20,6 +20,13 @@ server.listen(port);
 
 
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
 server.on("listening", () => {
   console.log(`server is listening for requests on port ${server.address().port}`);
 });
