@@ -9,7 +9,8 @@ class LoginForm extends Component {
     this.state = { 
       email: '',
       password: '',
-      redirectTo: null
+      redirectTo: null,
+      err: ''
     };
   }
 
@@ -39,29 +40,62 @@ class LoginForm extends Component {
       }
     })
     .catch((err) => {
+      this.setState({ err: err.response.data.errors })
       console.log('LOGIN ERROR: ', err);
     })
   }
+
+  clearErr = () => {
+    this.setState({ err: null})
+  }
+
+
 
   render() {
     if (this.state.redirectTo) {
       return <Redirect to={{ pathname: this.state.redirectTo }} /> 
     } 
+    
 
     return (
-      <Container> 
-        <Form onSubmit={this.handleSubmit} >
-          <FormGroup> 
-            <h1> Log In </h1>
-            <Label for="email">E-mail: </Label>
-            <Input type='text' name='email' value={this.state.email} onChange={this.handleChange} />
-            <Label for='password'>Password:</Label> 
-            <Input type='password' name='password' value={this.state.password} onChange={this.handleChange} /> 
-            <Button onClick={this.handleSubmit}> Sign In</Button>
-          </FormGroup>
-        </Form>
-      </Container> 
-            
+      <div className='container-fluid'>
+        <div id='signupForm' className='row justify-content-center align-items-center h-100'>
+          <div className='col col-sm-6 col-md-6 col-lg-4 col-xl-3'>
+            <h1 id='loginHeaders'>Sign In</h1>
+            <form onSubmit={this.handleSubmit}>
+              <div className='form-group'>
+                <input placeholder='Please enter a valid email' type='email' className='form-control form-control-lg'
+                  name='email' value={this.state.email} onChange={this.handleChange} />
+              </div>
+              <div className='form-group'>
+                <input placeholder='Enter password' type='password' className='form-control form-control-lg'
+                  name='password' value={this.state.password} onChange={this.handleChange} />
+              </div>
+              <button type='submit' className='btn btn-info btn-lg btn-block' onClick={this.handleSubmit}>Sign In</button>
+            </form>
+          </div>
+        </div>
+        <div id='sigupAlerts' className='row justify-content-center align-items-center h-10'>
+          <div className='col col-sm-6 col-md-6 col-lg-4 col-xl-3'>
+
+            {
+            this.state.err ?
+            this.state.err.map((err, id) => {
+              return (
+                <div key={id} className="alert alert-primary alert-dismissible fade show my-2" role="alert">
+                  <strong> {err.msg}</strong>
+                  <button onClick={this.clearErr} type="button" className="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              );
+            })
+            :
+            ''
+            }
+          </div>
+        </div>
+      </div>
     )
   }
 

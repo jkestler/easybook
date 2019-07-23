@@ -20,25 +20,25 @@ const Landing = (props) => {
       <div className="landing-background"></div>
       <div className="heading-text">
         <h1 className="header"> Simplify your browsing experience with easyBook. </h1>
-        <h3> An intuitive organizational tool for all your bookmarks. </h3>
-        <Button> Sign Up! </Button>
+        {/* <h3> An intuitive organizational tool for all your bookmarks. </h3> */}
+        {/* <Button> Sign Up! </Button> */}
       </div>
-      <div className="landing-features"> 
+      {/* <div className="landing-features"> 
         <div className="row feature-row">
 
           <Col lg="4" md="12" className="feature-column" >
-              <img src={folderIcon} alt="folder"/>
+              <img id='landingImg' src={folderIcon} alt="folder"/>
               <p> Organize your bookmarks into customizable folders and access them easily with folder filtering </p>
           </Col>
 
-          <Col lg="4" md="12"  className="feature-column">
-            <img src={searchIcon} alt="tag" /> 
+          <Col lg="4" md="12" className="feature-column">
+            <img src={searchIcon} id='landingImg' alt="tag" /> 
             <p>Search for your bookmarks in real-time</p> 
             
           </Col>
 
           <Col lg="4" md="12" className="feature-column">
-            <img src={tagIcon} alt="search"/>
+            <img src={tagIcon} id='landingImg' alt="search"/>
             <p> Add re-usable tags to your bookmarks to link resources in different folders </p>
             
           </Col>
@@ -46,7 +46,7 @@ const Landing = (props) => {
 
 
         </div>
-      </div>
+      </div> */}
     </div>
   )
 };

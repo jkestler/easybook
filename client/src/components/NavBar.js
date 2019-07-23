@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 // import Bootstrap from 'bootstrap';
 // import axios from 'axios'; 
 
+import logo from '../assets/img/easybook_logo3.png';
+
  class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -54,25 +56,47 @@ import { Link } from 'react-router-dom';
 
       this.props.loggedIn ? (
  
-        <nav className='navbar navbar-light bg-light'>
-          <Link to='/' className='navbar-brand' >easyBook</Link>
-          <Link to='/' className='nav-link landing-nav' onClick={this.props.signoutUser}> Log Out</Link>
+        <nav className='navbar mr-3' id='navBar'>
+          <a href='/' className='navbar-brand mt-4'><img id='logoImg' src={logo} alt='logo'/></a>
+          <Link to='/' className='nav-link mt-1 ml-3 text-primary btn btn-outline-primary bg-white' onClick={this.props.signoutUser}> Log Out</Link>
         </nav>
       
       ) : (
 
-        <nav className='navbar navbar-light bg-light  '> 
-          <Link to='/' className='navbar-brand'>easyBook</Link>
-          <Link to='/signin' className='nav-link landing-nav' > Log In </Link>
-          <Link to='/signup' className='nav-link' landing-nav> Sign Up</Link>
-        </nav>
+      <nav className='navbar mr-3' id='navBar'> 
+        <a href='/' className='navbar-brand mt-4'><img id='logoImg' src={logo} alt='logo'/></a>
+        <Link to='/signin' className='nav-link mt-4 text-white btn btn-primary landing-nav' > Log In </Link>
+        <Link to='/signup' className='nav-link mt-4 ml-3 text-primary btn btn-outline-info bg-white' landing-nav> Sign Up</Link>
+      </nav> 
 
       )
     )
   }
-
+  
 }
 
 export default NavBar;
 
- 
+
+// <nav class="navbar navbar-expand-lg navbar-light bg-light">
+//   <img src={logo} />
+//   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+//     <span class="navbar-toggler-icon"></span>
+//   </button>
+//   <div class="collapse navbar-collapse" id="navbarNav">
+//     <ul class="nav navbar-nav ml-auto">
+//       <li class="nav-item active">v
+//         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+//       </li>
+//       <li class="nav-item">
+//         <a class="nav-link" href="/">Features</a>
+//       </li>
+//       <li class="nav-item">
+//         <a class="nav-link" href="/">Pricing</a>
+//       </li>
+//       <li class="nav-item">
+//         <a class="nav-link disabled" href="/">Disabled</a>
+//       </li>
+//     </ul>
+//     </div>
+//   </nav>
