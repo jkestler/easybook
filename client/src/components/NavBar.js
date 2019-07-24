@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import Bootstrap from 'bootstrap';
 // import axios from 'axios'; 
 
-import logo from '../assets/img/easybook_logo3.png';
+import logo from '../assets/img/logo_transparent_white.png';
 
  class NavBar extends Component {
   constructor(props) {
@@ -58,15 +58,15 @@ import logo from '../assets/img/easybook_logo3.png';
  
         <nav className='navbar mr-3' id='navBar'>
           <a href='/' className='navbar-brand mt-4'><img id='logoImg' src={logo} alt='logo'/></a>
-          <Link to='/' className='nav-link mt-1 ml-3 text-primary btn btn-outline-primary bg-white' onClick={this.props.signoutUser}> Log Out</Link>
+          <Link to='/' className='nav-link mt-1 ml-3 text-primary btn btn-outline-primary bg-white btn-lg' onClick={this.props.signoutUser}> Log Out</Link>
         </nav>
       
       ) : (
 
       <nav className='navbar mr-3' id='navBar'> 
         <a href='/' className='navbar-brand mt-4'><img id='logoImg' src={logo} alt='logo'/></a>
-        <Link to='/signin' className='nav-link mt-4 text-white btn btn-primary landing-nav' > Log In </Link>
-        <Link to='/signup' className='nav-link mt-4 ml-3 text-primary btn btn-outline-info bg-white' landing-nav> Sign Up</Link>
+        <Link to='/signin' className='nav-link mt-4 text-primary btn btn-primary bg-white landing-nav btn-lg' > Log In </Link>
+        <Link to='/signup' className='nav-link mt-4 ml-3 text-white btn bg-info btn-lg' landing-nav> Sign Up</Link>
       </nav> 
 
       )

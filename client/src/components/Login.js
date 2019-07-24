@@ -71,7 +71,7 @@ class LoginForm extends Component {
                 <input placeholder='Enter password' type='password' className='form-control form-control-lg'
                   name='password' value={this.state.password} onChange={this.handleChange} />
               </div>
-              <button type='submit' className='btn btn-info btn-lg btn-block' onClick={this.handleSubmit}>Sign In</button>
+              <button type='submit' className='btn btn-info btn-lg btn-block' onClick={this.handleSubmit}>Login </button>
             </form>
           </div>
         </div>

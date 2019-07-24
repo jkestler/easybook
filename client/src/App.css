@@ -39,12 +39,14 @@ Body {
 #logoImg {
   padding: 0px;
   margin-top: 10px;
-
+  width: 12rem;
+  height: 12rem;
+  top: -55px;
   /* width: 110px; */
   /* height: 109px; */
   /* margin-top: 0px; */
   position: absolute;
-  top: -10px
+  /* top: -10px */
 }
 
 
@@ -65,7 +67,8 @@ Body {
   width: 100%;
   margin-left: auto;
   text-align: center;
-  top: 150px;
+  top: 160px;
+
   vertical-align: middle;
   line-height: 3.8rem;
   font-size: 2.6em;
@@ -139,6 +142,10 @@ svg {
 .landing-features h4 {
   text-align: center;
   color: rgb(86, 37, 37);
+}
+
+#landingCards {
+  background-color: #ffffffce !important;
 }
 
 

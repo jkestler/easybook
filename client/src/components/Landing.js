@@ -11,35 +11,32 @@ const Landing = (props) => {
     <div className='container'>
         <div className='row'>
           <div className='col-lg-12' id='heading-text' >
-             <h1 className="header text-white" > Simple. Intuitive. <em>Easy.</em>  </h1>
-             <h1 className='text-white'> Bookmarking done right. </h1>
+             <h1 className='header text-white' > Simple. Intuitive. <em>Easy.</em>  </h1>
+             <h1 className='text-white mt-4'> Bookmarking done right. </h1>
           </div>
         </div>
         <div className='row' id='heading-row'>
           <div className='col-lg-4 col-sm-12'>
-            <div class="card bg-info">
-              <img class="card-img-top" src={folderIcon} alt="search icon"/>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class='card bg-white border-dark' id='landingCards' >
+              <img class='card-img-top' src={folderIcon} alt='search icon'/>
+              <div class='card-body text-dark'>
+                <p class='card-text'>Quickly search through your collections to instantly find what you need.</p>
               </div>
             </div>
           </div>
           <div className='col-lg-4 col-sm-12'>
-            <div class="card bg-info">
-              <img class="card-img-top" src={searchIcon} alt="tag icon"/>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class='card bg-white border-dark ' id='landingCards'>
+              <img class='card-img-top' src={searchIcon} alt='tag icon'/>
+              <div class='card-body text-dark'>
+                <p class='card-text'>Add re-usable tags to your bookmarks to link resources in different folders.</p>
               </div>
             </div>
           </div>
           <div className='col-lg-4 col-sm-12'>
-            <div class="card bg-info">
-              <img class="card-img-top" src={tagIcon} alt="folder icon"/>
-               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class='card bg-white border-dark' id='landingCards'>
+              <img class='card-img-top' src={tagIcon} alt='folder icon'/>
+               <div class='card-body text-dark'>
+                <p class='card-text'> Organize your bookmarks into customizable folders and access them easily with folder filtering. </p>
               </div>
             </div>
           </div>
