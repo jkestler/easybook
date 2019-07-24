@@ -36,7 +36,7 @@ return (
 
   <div className={(this.state.toggle ? 'd-flex toggled' : 'd-flex')} id='wrapper'>
 
-    <div className="mt-1" id="sidebar-wrapper">
+    <div className="mt-1 mr-2" id="sidebar-wrapper">
       <div className="sidebar-heading">Folders </div>
       <div className="list-group list-group-flush">
         <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Bootstrap</a>
@@ -68,8 +68,8 @@ return (
         </div>
       </nav>
 
-      <div classNameName="container-fluid">
-        <div className="row mt-2">
+      <div classNameName="container-fluid mt-2">
+        <div className="row mt-1">
           <div className="col-sm-4">
             <div className="card">
               <div className="card-body">

@@ -71,7 +71,7 @@ class SignupForm extends Component {
         {/* </div> */}
         <div id='signupForm' className='row justify-content-center align-items-center h-100'>
           <div className='col col-sm-6 col-md-6 col-lg-4 col-xl-3'>
-        <h1 id='loginHeaders'>Sign Up</h1>
+            <h1 id='loginHeaders'>Sign Up</h1>
             <form onSubmit={this.handleSubmit}>
               <div className='form-group'> 
                 <input placeholder='Please enter a valid email' type='email' className='form-control form-control-lg' name='email' value={this.state.email} onChange={this.handleChange} />

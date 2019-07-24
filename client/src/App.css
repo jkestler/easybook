@@ -2,10 +2,13 @@
   box-sizing: border-box;
   /* font-family: 'Lato', 'Arial', sans-serif; */
   font-family: 'Karla', sans-serif;
-  height: 100%;
+  /* height: 100%; */
   font-size: 20px;
 }
 
+Body {
+  background-image: url('./assets/img/cool-background2.png');
+}
 
 
 /* ! NavBar */
@@ -14,7 +17,7 @@
 .landing-nav {
   margin-left: auto;
 }
-
+ 
 #navBar {
   height: 8vh;
   position: relative;
@@ -32,9 +35,6 @@
   margin-top: 10%;
 }
 
-Body {
-  background-image: url('./assets/img/cool-background2.png');
-}
 
 #logoImg {
   padding: 0px;
@@ -49,8 +49,46 @@ Body {
 
 
 /* ! Landing */
-.landing {
+
+#landing-rows-1 {
   position: relative;
+}
+#heading-row {
+  margin-top: 24%;
+}
+
+
+#heading-text {
+
+  position: relative;
+  top: 25%;
+  width: 100%;
+  margin-left: auto;
+  text-align: center;
+  top: 150px;
+  vertical-align: middle;
+  line-height: 3.8rem;
+  font-size: 2.6em;
+  letter-spacing: .14em;
+  /* height: 40vh */
+  
+}
+
+.card-img-top {
+  width: 8rem !important;
+  margin: auto
+}
+
+
+
+.heading-emph {
+  font-size: .9em;
+}
+
+svg {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
 }
 
 /* ! Sign In Screens */
@@ -76,19 +114,7 @@ Body {
 }
 
 
-.heading-text {
-  text-align: right;
-  position: absolute;
-  color: #ffffff;
-  display: block;
-  /* right: 10px; */
-  /* bottom: 245px; */
-  top: 30%;
-  right: 5%;
-  width: 50%;
-  font-size: 4em !important;
 
-}
 
 
 /*  ! --- LANDING  --- */
