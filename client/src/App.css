@@ -6,7 +6,8 @@
   /* font-family: 'Vollkorn', serif; */
   /* height: 100%; */
   font-size: 20px;
-  /* margin: 10px; */
+  margin: 1%;
+  /* height: 100vh;gvgvgv */
 }
 
 Body {
@@ -24,17 +25,18 @@ Body {
 }
  
 #navBar {
-  height: 8vh;
+  /* height: 8vh; */
   position: relative;
   /* background-color: #043d72 */
 }
 
 #logoutLogo {
   padding: 0px;
-  margin-top: 10px;
-  width: 12rem;
-  height: 12rem;
-  top: -76px;
+  width: 15rem;
+  height: 15rem;
+  margin-top: -9%;
+  /* z-index: -1; */
+  margin-left: 39%;
   /* width: 110px; */
   /* height: 109px; */
   /* margin-top: 0px; */
@@ -153,7 +155,7 @@ Body {
 }
 
 
-/* * ------------ Main ------------ * */
+/* * ------------ Main Sidebar ------------ * */
 
 
 #sidebar-wrapper {
@@ -176,25 +178,61 @@ Body {
   width: 15rem;
 }
 
-#page-content-wrapper {
-  min-width: 100vw;
-}
 
 #wrapper.toggled #sidebar-wrapper {
   margin-left: 0;
+  
 }
 
 @media (min-width: 768px) { 
   #sidebar-wrapper {
     margin-left: 0;
   }
-
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
-
+  
+  
   #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
+    margin-left: -16rem;
   }
+}
+
+/* * ----Main Sidebar 2---- */
+
+#page-content-wrapper {
+  min-width: 100vw;
+  height: 150px;
+  /* max-height: 100vh; */
+  /* height: 100vh !important; */
+  /* height: 720px; */
+    min-width: 0;
+  /* width: 100%; */
+  /* height: 95vh; */
+    margin: 10px;
+    /* position: relative; */
+    /* top: -20  */
+}
+.list-group-flush { 
+  margin-top: 25%; 
+}
+#wrapper {
+  /* border: 1px solid black; */
+}
+
+#search-input input{
+  width: 100% !important;
+}
+
+/* * ---- Bookmark Container ---- */
+ 
+#bookmark-container {
+  height: 85vh;
+  /* height: 80vh !important; */
+  overflow: scroll;
+  position: relative;
+  bottom: 1px;
+  /* margin: 0; */
+}
+#menu-toggle {
+  left: 1%;
+  top: 9%;
+  position: absolute
 }
