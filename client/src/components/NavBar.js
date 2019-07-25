@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 // import Bootstrap from 'bootstrap';
 // import axios from 'axios'; 
 
+import logo from '../assets/img/logo_transparent_white.png';
+
  class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -20,32 +22,6 @@ import { Link } from 'react-router-dom';
     // localStorage.getItem('loggedIn');
   }
   
-  // toggle = () => {
-  //   this.setState({
-  //     isOpen: !this.state.isOpen
-  //   });
-  // }
-
-  // logout = (e) => {
-  //   e.preventDefault();
-  //   console.log('Loggin out...');
-  //   axios.get('/user/signout')
-  //   .then(res => {
-  //     console.log('LOGOUT RESPONSE:', res);
-  //     this.props.updateUser({
-  //       loggedIn: false,
-  //       email: res.data.username,
-  //       id: res.data.id
-  //     })
-  //   })
-  //   .catch((err) => {
-  //     console.log('Logout Error:', err);
-  //   });
-  // }
-
-  // handleSignout = () => {
-  //   return this.props.signOut()
-  // }
 
   render() {
     // const loggedIn = this.props.loggedIn ;
@@ -54,25 +30,47 @@ import { Link } from 'react-router-dom';
 
       this.props.loggedIn ? (
  
-        <nav className='navbar navbar-light bg-light'>
-          <Link to='/' className='navbar-brand' >easyBook</Link>
-          <Link to='/' className='nav-link landing-nav' onClick={this.props.signoutUser}> Log Out</Link>
+        <nav className='navbar mr-3' id='navBar'>
+          <a href='/' className='navbar-brand'><img id='logoutLogo' src={logo} alt='logo'/></a>
+          <Link to='/' className='nav-link mb-3 ml-4 text-primary btn btn-outline-primary bg-white btn-sm' onClick={this.props.signoutUser}> Log Out</Link>
         </nav>
       
       ) : (
 
-        <nav className='navbar navbar-light bg-light  '> 
-          <Link to='/' className='navbar-brand'>easyBook</Link>
-          <Link to='/signin' className='nav-link landing-nav' > Log In </Link>
-          <Link to='/signup' className='nav-link' landing-nav> Sign Up</Link>
-        </nav>
+      <nav className='navbar mr-3' id='navBar'> 
+        <a href='/bookmarks' className='navbar-brand mt-4'><img id='loginLogo' src={logo} alt='logo'/></a>
+        <Link to='/signin' className='nav-link mt-4 text-primary btn btn-primary bg-white landing-nav btn-lg' > Log In </Link>
+        <Link to='/signup' className='nav-link mt-4 ml-3 text-white btn bg-primary btn-lg' landing-nav> Sign Up</Link>
+      </nav> 
 
       )
     )
   }
-
+  
 }
 
 export default NavBar;
 
- 
+
+// <nav class="navbar navbar-expand-lg navbar-light bg-light">
+//   <img src={logo} />
+//   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+//     <span class="navbar-toggler-icon"></span>
+//   </button>
+//   <div class="collapse navbar-collapse" id="navbarNav">
+//     <ul class="nav navbar-nav ml-auto">
+//       <li class="nav-item active">v
+//         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+//       </li>
+//       <li class="nav-item">
+//         <a class="nav-link" href="/">Features</a>
+//       </li>
+//       <li class="nav-item">
+//         <a class="nav-link" href="/">Pricing</a>
+//       </li>
+//       <li class="nav-item">
+//         <a class="nav-link disabled" href="/">Disabled</a>
+//       </li>
+//     </ul>
+//     </div>
+//   </nav>

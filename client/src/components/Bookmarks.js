@@ -36,22 +36,22 @@ return (
 
   <div className={(this.state.toggle ? 'd-flex toggled' : 'd-flex')} id='wrapper'>
 
-    <div className="bg-light border-right" id="sidebar-wrapper">
+    <div className="mt-1 mr-2" id="sidebar-wrapper">
       <div className="sidebar-heading">Folders </div>
       <div className="list-group list-group-flush">
-        <a href="/" className="list-group-item list-group-item-action bg-light">Bootstrap</a>
-        <a href="/" className="list-group-item list-group-item-action bg-light">Bloc</a>
-        <a href="/" className="list-group-item list-group-item-action bg-light">Documentation</a>
-        <a href="/" className="list-group-item list-group-item-action bg-light">Courses</a>
-        <a href="/" className="list-group-item list-group-item-action bg-light">Github</a>
-        <a href="/" className="list-group-item list-group-item-action bg-light">Jobs</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Bootstrap</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Bloc</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Documentation</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Courses</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Github</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Jobs</a>
       </div>
     </div>
     
     <div id="page-content-wrapper">
 
-      <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button className="btn btn-primary" onClick={this.toggleClass} id="menu-toggle">Toggle</button>
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <button className="btn btn-primary" onClick={this.toggleClass} id="menu-toggle"></button>
 
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,98 +60,98 @@ return (
        
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <div className="navbar-nav ml-auto mt-2 mt-lg-0">
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form className="form-inline my-2 my-lg-0">
+              <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+              <button className="btn btn-success my-2 my-sm-0" type="submit">Search</button>
             </form> 
           </div>
         </div>
       </nav>
 
-      <div className="container-fluid">
-        <div class="row mt-2">
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Bookmark 1</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="/" class="btn btn-primary">View / Edit</a>
+      <div classNameName="container-fluid mt-2">
+        <div className="row mt-1">
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 1</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary">View / Edit</a>
               </div>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Bookmark 2</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="/" class="btn btn-primary">View / Edit </a>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 2</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary">View / Edit </a>
               </div>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Bookmark 3</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="/" class="btn btn-primary"> View / Edit </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-2">
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Bookmark 1</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="/" class="btn btn-primary">View / Edit</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Bookmark 2</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="/" class="btn btn-primary">View / Edit </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Bookmark 3</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="/" class="btn btn-primary"> View / Edit </a>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 3</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary"> View / Edit </a>
               </div>
             </div>
           </div>
         </div>
-        <div class="row mt-2">
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Bookmark 1</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="/" class="btn btn-primary">View / Edit</a>
+        <div className="row mt-2">
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 1</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary">View / Edit</a>
               </div>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Bookmark 2</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="/" class="btn btn-primary">View / Edit </a>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 2</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary">View / Edit </a>
               </div>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Bookmark 3</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="/" class="btn btn-primary"> View / Edit </a>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 3</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary"> View / Edit </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row mt-2">
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 1</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary">View / Edit</a>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 2</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary">View / Edit </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 3</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary"> View / Edit </a>
               </div>
             </div>
           </div>

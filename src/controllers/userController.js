@@ -16,8 +16,8 @@ module.exports =  {
 
     userQueries.createUser(newUser, (err, user) => {
         if (err) {
-          console.log(err)
-          res.status(500);
+          console.log(err);
+          res.status(500).json({err});
         } else {
           passport.authenticate('local')(req, res, () => {
             res.status(201).json({id: user.id, username: user.email });

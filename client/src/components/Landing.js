@@ -1,53 +1,49 @@
 import React from 'react';
-import { 
-  Jumbotron, 
-  Button, 
-  Container, 
-  Row, 
-  Card, 
-  CardTitle, 
-  CardText,
-  Col
- } from 'reactstrap';
 import folderIcon from '../assets/img/landing-folder.png';
-import tagIcon from '../assets/img/landing-tag.png';
+import tagIcon from '../assets/img/landing-tag1.png';
 import searchIcon from '../assets/img/landing-search.png';
+import { render } from 'react-dom';
+import IosArrowDropdown from 'react-ionicons/lib/IosArrowDropdown';
 
 
 const Landing = (props) => {
   return (
-    <div className="landing">
-      <div className="landing-background"></div>
-      <div className="heading-text">
-        <h1 className="header"> Simplify your browsing experience with easyBook. </h1>
-        <h3> An intuitive organizational tool for all your bookmarks. </h3>
-        <Button> Sign Up! </Button>
-      </div>
-      <div className="landing-features"> 
-        <div className="row feature-row">
-
-          <Col lg="4" md="12" className="feature-column" >
-              <img src={folderIcon} alt="folder"/>
-              <p> Organize your bookmarks into customizable folders and access them easily with folder filtering </p>
-          </Col>
-
-          <Col lg="4" md="12"  className="feature-column">
-            <img src={searchIcon} alt="tag" /> 
-            <p>Search for your bookmarks in real-time</p> 
-            
-          </Col>
-
-          <Col lg="4" md="12" className="feature-column">
-            <img src={tagIcon} alt="search"/>
-            <p> Add re-usable tags to your bookmarks to link resources in different folders </p>
-            
-          </Col>
-
-
-
+    <div className='container'>
+        <div className='row'>
+          <div className='col-lg-12' id='heading-text' >
+             <h1 className='header text-dark' > <strong> Simple. Intuitive. <em>Easy.</em>  </strong></h1>
+             <h1 className='text-dark mt-4'> <strong> Bookmarking done right.</strong> </h1>
+          </div>
         </div>
+        <div className='row' id='heading-row'>
+          <div className='col-lg-4 col-sm-12 feature-column'>
+            <div class='card bg-dark border-dark' id='landingCards' >
+              <img class='card-img-top' src={folderIcon} alt='search icon'/>
+              <div class='card-body text-dark'>
+                <p class='card-text'>Quickly search through your collections to instantly find what you need.</p>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-4 col-sm-12 feature-column'>
+            <div class='card bg-dark border-dark ' id='landingCards'>
+              <img class='card-img-top' src={searchIcon} alt='tag icon'/>
+              <div class='card-body text-dark'>
+                <p class='card-text'>Add re-usable tags to your bookmarks to link resources in different folders.</p>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-4 col-sm-12 feature-column'>
+            <div class='card bg-dark border-dark' id='landingCards'>
+              <img class='card-img-top' src={tagIcon} alt='folder icon'/>
+               <div class='card-body text-dark'>
+                <p class='card-text'> Organize your bookmarks into customizable folders and access them easily with folder filtering. </p>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
+
+        
   )
 };
 
@@ -117,4 +113,4 @@ export default Landing;
   //           <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
   //           <Button>Go somewhere</Button>
   //         </Card>
-  //       </Col>
+  //       </Col> 
