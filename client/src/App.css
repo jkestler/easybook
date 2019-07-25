@@ -34,9 +34,9 @@ Body {
   padding: 0px;
   width: 15rem;
   height: 15rem;
-  margin-top: -9%;
   /* z-index: -1; */
-  margin-left: 39%;
+  top: -100%;
+  left: 40%;
   /* width: 110px; */
   /* height: 109px; */
   /* margin-top: 0px; */

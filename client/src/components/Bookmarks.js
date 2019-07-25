@@ -39,7 +39,7 @@ return (
     <div className="mr-2" id="sidebar-wrapper">
     {/* <button className="btn btn-primary sidebar-heading " onClick={this.toggleClass} id="menu-toggle">Toggle</button> */}
       {/* <div className="sidebar-heading">Folders </div> */}
-        <button className="btn btn-primary btn-sm" onClick={this.toggleClass} id="menu-toggle">Toggle</button>
+        <button className="btn btn-primary btn-sm" onClick={this.toggleClass} id="menu-toggle">Toggle Sidebar</button>
       <div className="list-group list-group-flush">
       
         <form className="form-inline list-group my-2 my-lg-0" id='search-input' >
