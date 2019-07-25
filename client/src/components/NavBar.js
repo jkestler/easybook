@@ -22,32 +22,6 @@ import logo from '../assets/img/logo_transparent_white.png';
     // localStorage.getItem('loggedIn');
   }
   
-  // toggle = () => {
-  //   this.setState({
-  //     isOpen: !this.state.isOpen
-  //   });
-  // }
-
-  // logout = (e) => {
-  //   e.preventDefault();
-  //   console.log('Loggin out...');
-  //   axios.get('/user/signout')
-  //   .then(res => {
-  //     console.log('LOGOUT RESPONSE:', res);
-  //     this.props.updateUser({
-  //       loggedIn: false,
-  //       email: res.data.username,
-  //       id: res.data.id
-  //     })
-  //   })
-  //   .catch((err) => {
-  //     console.log('Logout Error:', err);
-  //   });
-  // }
-
-  // handleSignout = () => {
-  //   return this.props.signOut()
-  // }
 
   render() {
     // const loggedIn = this.props.loggedIn ;
@@ -57,16 +31,16 @@ import logo from '../assets/img/logo_transparent_white.png';
       this.props.loggedIn ? (
  
         <nav className='navbar mr-3' id='navBar'>
-          <a href='/' className='navbar-brand mt-4'><img id='logoImg' src={logo} alt='logo'/></a>
-          <Link to='/' className='nav-link mt-1 ml-3 text-primary btn btn-outline-primary bg-white btn-lg' onClick={this.props.signoutUser}> Log Out</Link>
+          <a href='/' className='navbar-brand'><img id='logoutLogo' src={logo} alt='logo'/></a>
+          <Link to='/' className='nav-link mb-3 ml-4 text-primary btn btn-outline-primary bg-white btn-sm' onClick={this.props.signoutUser}> Log Out</Link>
         </nav>
       
       ) : (
 
       <nav className='navbar mr-3' id='navBar'> 
-        <a href='/' className='navbar-brand mt-4'><img id='logoImg' src={logo} alt='logo'/></a>
+        <a href='/bookmarks' className='navbar-brand mt-4'><img id='loginLogo' src={logo} alt='logo'/></a>
         <Link to='/signin' className='nav-link mt-4 text-primary btn btn-primary bg-white landing-nav btn-lg' > Log In </Link>
-        <Link to='/signup' className='nav-link mt-4 ml-3 text-white btn bg-info btn-lg' landing-nav> Sign Up</Link>
+        <Link to='/signup' className='nav-link mt-4 ml-3 text-white btn bg-primary btn-lg' landing-nav> Sign Up</Link>
       </nav> 
 
       )

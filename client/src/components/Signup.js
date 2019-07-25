@@ -82,7 +82,7 @@ class SignupForm extends Component {
               <div className='form-group'> 
                 <input placeholder= 'Confirm Password' type='password' className='form-control form-control-lg' name='passwordConfirmation' value={this.state.passwordConfirmation} onChange={this.handleChange} />
               </div>
-              <button type='submit' className='btn btn-info btn-lg btn-block' onClick={this.handleSubmit}>Sign Up!</button>
+              <button type='submit' className='btn btn-primary btn-lg btn-block' onClick={this.handleSubmit}>Sign Up!</button>
             </form>  
           </div>
         </div>

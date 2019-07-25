@@ -10,7 +10,8 @@ class LoginForm extends Component {
       email: '',
       password: '',
       redirectTo: null,
-      err: ''
+      err: '',
+      errMsg: ''
     };
   }
 
@@ -40,7 +41,7 @@ class LoginForm extends Component {
       }
     })
     .catch((err) => {
-      this.setState({ err: err.response.data.errors })
+      this.setState({ err: err.response.data.errors});
       console.log('LOGIN ERROR: ', err);
     })
   }
@@ -71,7 +72,7 @@ class LoginForm extends Component {
                 <input placeholder='Enter password' type='password' className='form-control form-control-lg'
                   name='password' value={this.state.password} onChange={this.handleChange} />
               </div>
-              <button type='submit' className='btn btn-info btn-lg btn-block' onClick={this.handleSubmit}>Login </button>
+              <button type='submit' className='btn btn-primary btn-lg btn-block' onClick={this.handleSubmit}>Login </button>
             </form>
           </div>
         </div>
@@ -83,7 +84,7 @@ class LoginForm extends Component {
             this.state.err.map((err, id) => {
               return (
                 <div key={id} className="alert alert-primary alert-dismissible fade show my-2" role="alert">
-                  <strong> {err.msg}</strong>
+                  <strong> {err.msg} </strong>
                   <button onClick={this.clearErr} type="button" className="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>

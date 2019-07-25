@@ -51,7 +51,7 @@ return (
     <div id="page-content-wrapper">
 
       <nav className="navbar navbar-expand-lg navbar-light">
-        <button className="btn btn-primary" onClick={this.toggleClass} id="menu-toggle">Toggle</button>
+        <button className="btn btn-primary" onClick={this.toggleClass} id="menu-toggle"></button>
 
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
