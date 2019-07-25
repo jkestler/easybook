@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 // import { Link } from 'react-router-dom';
-import $ from 'jquery';
+import FolderIcon from 'react-ionicons/lib/IosFolderOpenOutline';
 
 class Bookmarks extends Component {
   constructor(props) {
@@ -36,40 +36,69 @@ return (
 
   <div className={(this.state.toggle ? 'd-flex toggled' : 'd-flex')} id='wrapper'>
 
-    <div className="mt-1 mr-2" id="sidebar-wrapper">
-      <div className="sidebar-heading">Folders </div>
+    <div className="mr-2" id="sidebar-wrapper">
+    {/* <button className="btn btn-primary sidebar-heading " onClick={this.toggleClass} id="menu-toggle">Toggle</button> */}
+      {/* <div className="sidebar-heading">Folders </div> */}
+        <button className="btn btn-primary btn-sm" onClick={this.toggleClass} id="menu-toggle">Toggle</button>
       <div className="list-group list-group-flush">
-        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Bootstrap</a>
-        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Bloc</a>
-        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Documentation</a>
-        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Courses</a>
-        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Github</a>
-        <a href="/" className="list-group-item list-group-item-action bg-dark text-white">Jobs</a>
+      
+        <form className="form-inline list-group my-2 my-lg-0" id='search-input' >
+          <input className="form-control m-0" type="search" placeholder="Search..." aria-label="Search" />
+        </form>
+        <button className='btn  btn-block btn-primary my-2' > Add Bookmark</button>
+        <h5> Folders: </h5> 
+        <form className="form-inline list-group my-2 my-lg-0" id='search-input' >
+          <input className="form-control mb-2" type="search" placeholder="Add folder..." aria-label="Search" />
+        </form>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Bootstrap</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Bloc</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Documentation</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Courses</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Github</a>
+        <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Jobs</a>
+        
       </div>
     </div>
     
     <div id="page-content-wrapper">
 
-      <nav className="navbar navbar-expand-lg navbar-light">
-        <button className="btn btn-primary" onClick={this.toggleClass} id="menu-toggle"></button>
+      {/* <nav className="navbar navbar-expand-lg navbar-light"> */}
+        
 
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
        
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <div className="navbar-nav ml-auto mt-2 mt-lg-0">
-            <form className="form-inline my-2 my-lg-0">
-              <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-            </form> 
+      {/* </nav> */}
+
+      <div classNameName="container" id='bookmark-container'>
+        <div className="row mt-2">
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 1</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary">View / Edit</a>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 2</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary">View / Edit </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Bookmark 3</h5>
+                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="/" className="btn btn-primary"> View / Edit </a>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
-
-      <div classNameName="container-fluid mt-2">
-        <div className="row mt-1">
+        <div className="row mt-2">
           <div className="col-sm-4">
             <div className="card">
               <div className="card-body">

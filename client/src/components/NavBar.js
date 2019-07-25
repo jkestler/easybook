@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // import axios from 'axios'; 
 
 import logo from '../assets/img/logo_transparent_white.png';
+import logoLogout from '../assets/img/logo_transparent.png';
 
  class NavBar extends Component {
   constructor(props) {
@@ -31,8 +32,8 @@ import logo from '../assets/img/logo_transparent_white.png';
       this.props.loggedIn ? (
  
         <nav className='navbar mr-3' id='navBar'>
-          <a href='/' className='navbar-brand'><img id='logoutLogo' src={logo} alt='logo'/></a>
-          <Link to='/' className='nav-link mb-3 ml-4 text-primary btn btn-outline-primary bg-white btn-sm' onClick={this.props.signoutUser}> Log Out</Link>
+          <a href='/' className='navbar-brand'><img id='logoutLogo' src={logoLogout} alt='logo'/></a>
+          <Link to='/' className='nav-link mb-4 ml-4 text-primary btn btn-outline-primary bg-white btn-sm' onClick={this.props.signoutUser}> Log Out</Link>
         </nav>
       
       ) : (
