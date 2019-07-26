@@ -2,24 +2,27 @@ const request = require("request");
 const server = require("../../src/server");
 const base = "http://localhost:5001/user/";
 const User = require("../../src/db/models").User;
+const Folder = require('../../src/db/models').Folder;
 const sequelize = require("../../src/db/models/index").sequelize;
 
 describe("routes : users", () => {
 
   beforeEach((done) => {
-    sequelize.sync({ force: true })
-    .then(() => {
-      done();
-    })
-    .catch((err) => {
-      console.log(err);
-      done();
-    });
+    sequelize.sync({
+        force: true
+      })
+      .then(() => {
+        done();
+      })
+      .catch((err) => {
+        console.log(err);
+        done();
+      });
   });
 
 
-  describe("POST /users", () => {
-      
+  describe("POST /user", () => {
+
     it("should create a new user with valid values and respond with JSON", (done) => {
       const options = {
         url: base,
@@ -28,20 +31,24 @@ describe("routes : users", () => {
           'Content-Type': 'application/json'
         },
         body: {
-          email: 'jkest6200@gmail.com',
+          email: 'jkest62001@gmail.com',
           password: '123456789',
           passwordConfirmation: '123456789'
         },
         json: true
       }
-  
+
       request.post(options,
         (err, res, body) => {
-          User.findOne({where: {email: 'jkest6200@gmail.com' }})
+          User.findOne({
+              where: {
+                email: 'jkest62001@gmail.com'
+              }
+            })
             .then((user) => {
               this.user = user;
               expect(user).not.toBeNull();
-              expect(user.email).toBe("jkest6200@gmail.com");
+              expect(user.email).toBe("jkest62001@gmail.com");
               expect(user.id).toBe(1);
               done();
             })
@@ -49,63 +56,75 @@ describe("routes : users", () => {
               console.log(err);
               done();
             });
-          });
+        });
+    });
+  });
+
+  describe("GET /user/signout/", () => {
+
+    it("should sign out a user", (done) => {
+      const options = {
+        url: base + 'signout',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: {
+          email: 'lucy225@gmail.com',
+          password: '123456789',
+          passwordConfirmation: '123456789'
+        },
+        json: true
+      }
+
+      request.post(options, (err, res, body) => {
+        User.findOne({
+            where: {
+              email: 'lucy225@gmail.com'
+            }
+          })
+          .then((user) => {
+            this.user = user;
+            request.get(`${base}signout`, (err, res, body) => {
+              expect(user).toBeNull();
+              console.log(user);
+              done();
+            })
+          }
+        );
+      });
+    });
+  });
+  
+  describe('GET /user/:id', () => {
+    beforeEach((done) => {
+      this.user;
+      this.folder;
+
+      User.create({
+        email: 'jkest618@gmail.com',
+        password: 'jonathank'
+      })
+      .then((user) => {
+        this.user = user;
+        Folder.create({
+          folderName: 'Discussions',
+          userId: this.user.id
+        })
+        .then((folder) => {
+          this.folder = folder;
+          done();
+        });
       });
     });
 
-    describe("GET /user/signout/", () => {
-      
-      it("should sign out a user", (done ) => {
-        const options = {
-          url: base,
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: {
-            email: 'lucy224@gmail.com',
-            password: '123456789',
-            passwordConfirmation: '123456789'
-          },
-          json: true
-        }
+    it('should present a folder associated with this user', (done) => {
+      request.get(`${base}${this.user.id}`, (err, res, body) => {
+        console.log(res);
+        expect(body).toContain('Discussions');
+        done();
+      });
+    });
 
-        request.post(options, (err, res, body) => {
-          User.findOne({where: {email: 'lucy224@gmail.com' }})
-            .then((user) => {
-              this.user = user;
-              request.get(`${base}signout`, (err, res, body) => {
-                expect(user).toBeNull();
-                console.log(user);
-                done();
-              })
-            })
-          })
-      })
-    })
   });
-      
-      
-                // it("should not create a new user with invalid attributes and redirect", (done) => {
-                //   request.post(
-                //     {
-                //       url: base,
-                //       form: {
-                //         email: "no",
-                //         password: "123456789"
-                //       }
-                //     },
-                //     (err, res, body) => {
-                //       User.findOne({where: {email: "no"}})
-                //       .then((user) => {
-                //         expect(user).toBeNull();
-                //         done();
-                //       })
-                //       .catch((err) => {
-                //         console.log(err);
-                //         done();
-                //       });
-                //     }
-                //   );
-                // });
-      
+});

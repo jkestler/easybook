@@ -6,10 +6,13 @@ const userController = require('../controllers/userController');
 
 // register/create user
 router.post('/user', validation.validateUsers, userController.create);
+// sign in user
 router.post('/user/signin', validation.validateUsers, userController.signIn);
+// sign out user
 router.get('/user/signout', userController.signOut);
 
-// validation.validateUsers
+// get users folders and bookmarks 
+router.get('/user/:id', userController.show);
 
 
 
