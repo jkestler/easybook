@@ -4,14 +4,20 @@ const router = express.Router();
 const folderController = require('../controllers/folderController');
 // const validation = require('./validation');
 
-// show all folders 
-router.get('/folders', folderController.showAll);
+// // ? Show all folders - do I need this ?
+// router.get('/folders', folderController.showAll);
+
+
+// * Must have
+
+// create folder 
+router.post('/folders/create', folderController.create);
+// validation.validateFolders
 
 // show individual folder 
 // router.get('/folders/:id', folderCreate.showFolder); 
 
-// create folder 
-// router.post('/folders/create', validation.validateFolders, folderController.create);
+// * Nice to have 
 
 // delete individual folder 
 // router.post('/folders/:id/destroy', folderController.destroy);

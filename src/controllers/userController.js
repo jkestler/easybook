@@ -51,9 +51,8 @@ module.exports =  {
           console.log('Responded with user data');
           // res.json({ result: result});
           res.send(result)
-          console.log('RESPONSE RESULT', res.data.result)
         }
-      })
+      });
     }
 
   }
