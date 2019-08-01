@@ -15,7 +15,7 @@ router.post('/folders/create', folderController.create);
 // validation.validateFolders
 
 // show individual folder 
-// router.get('/folders/:id', folderCreate.showFolder); 
+router.get('/folders/:id', folderController.showFolder); 
 
 // * Nice to have 
 

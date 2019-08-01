@@ -12,14 +12,13 @@ module.exports =  {
       passwordConfirmation: req.body.passwordConfirmation 
     };
 
-    console.log("NEW USER:", newUser);
-
     userQueries.createUser(newUser, (err, user) => {
         if (err) {
           console.log(err);
           res.status(500).json({err});
         } else {
           passport.authenticate('local')(req, res, () => {
+            console.log('User Created');
             res.status(201).json({id: user.id, username: user.email });
           })
         }
@@ -30,27 +29,26 @@ module.exports =  {
     signIn(req, res, next) {
       passport.authenticate('local')(req, res, () => {
         if(req.user) {
+          console.log('Sign In Successful');
           res.status(200).json({id: req.user.id, username: req.user.email });
         }
       });
     },
 
     signOut(req, res, next) {
-      console.log('REQ.USER', req.user);
-      // console.log('BACKEND REQ:', req);
-      // console.log('BACKEND RESPONSE:', res);
       req.logout();
       res.status(200).json({success: true});
+      console.log('Sign Out Successful');
     },
 
+    // Show user folders, bookmarks, tags
     show(req, res, next) {
       userQueries.getUser(req.params.id, (err, result) => {
         if (err || result.user === undefined) {
           res.status(404).json({ error: err}) 
         } else {
           console.log('Responded with user data');
-          // res.json({ result: result});
-          res.send(result)
+          res.json({ result: result});
         }
       });
     }

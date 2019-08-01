@@ -87,7 +87,6 @@ describe("routes : users", () => {
             this.user = user;
             request.get(`${base}signout`, (err, res, body) => {
               expect(user).toBeNull();
-              console.log(user);
               done();
             })
           }
@@ -120,7 +119,6 @@ describe("routes : users", () => {
 
     it('should present a folder associated with this user', (done) => {
       request.get(`${base}${this.user.id}`, (err, res, body) => {
-        console.log(res);
         expect(body).toContain('Discussions');
         done();
       });
