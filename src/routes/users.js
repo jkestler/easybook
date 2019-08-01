@@ -11,7 +11,7 @@ router.post('/user/signin', validation.validateUsers, userController.signIn);
 // sign out user
 router.get('/user/signout', userController.signOut);
 
-// get users folders and bookmarks 
+// get user's folders and bookmarks 
 router.get('/user/:id', userController.show);
 
 

@@ -3,6 +3,21 @@ const router = express.Router();
 
 const bookmarkController = require('../controllers/bookmarkController');
 
-router.get('/bookmarks', bookmarkController.index);
+
+// * Must have 
+// create bookmark
+router.post('/folders/:folderId/bookmark/create', bookmarkController.create);
+
+// show individual bookmark
+router.get('/folders/:folderId/bookmark/:id', bookmarkController.showBookmark);
+
+
+// * Nice to have 
+
+// delete individual folder 
+// router.post('/folders/:id/destroy', folderController.destroy);
+
+// update indvidiual folder
+// router.post('/folders/:id/update', folderController.update);f
 
 module.exports = router;
