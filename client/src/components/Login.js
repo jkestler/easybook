@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import { Alert, FormGroup, Form, Label, Input, Button, Container } from 'reactstrap';
+// import { Alert, FormGroup, Form, Label, Input, Button, Container } from 'reactstrap';
 
 class LoginForm extends Component {
   constructor() {

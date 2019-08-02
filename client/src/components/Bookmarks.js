@@ -1,7 +1,6 @@
 // import { parse } from "path";
-
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 // import { Link } from 'react-router-dom';
 import FolderIcon from 'react-ionicons/lib/IosFolderOpenOutline';
 
@@ -9,26 +8,30 @@ class Bookmarks extends Component {
   constructor(props) {
   super(props);
   this.state = {
-    toggle: false
+    toggle: false,
+    userEmail: {},
+    userFolders: {},
+    userBookmarks: {}
   }
 }
+
 
   toggleClass = () => {
     this.state.toggle ? this.setState({ toggle: false}) : this.setState({ toggle: true})
   }
-     // let css = (this.state.toggle === 'hidden') ? 'toggle' : 'hidden'
-    // this.setState({
-    //   toggleClass: css
-    // })
 
-// toggleSideNav = () => {
-//   const css = (this.state.showHideSidenav === 'hidden') ? 'show' : 'hidden';
-//    this.setState({ 'showHideSidenav': css});
-//   $('#menu-toggle').click( function(e) {
-//     e.preventDefault();
-//     $('#wrapper').toggleClass('toggled');
-//   })
-// }
+  componentDidMount = () => {
+    axios.get(`/user/${JSON.parse(localStorage.getItem('id'))}`)
+    .then(res => {
+      console.log('RES.DATA', res);
+      this.setState({ 
+        userEmail: res.data.result.user.email,
+        userFolders: res.data.result.user.folders,
+        userBookmarks: res.data.result.user.folders.bookmarks
+      })
+      console.log(this.state);
+    })
+  }
 
 render() {
   
@@ -68,7 +71,7 @@ return (
        
       {/* </nav> */}
 
-      <div classNameName="container" id='bookmark-container'>
+      <div className="container-fluid" id='bookmark-container'>
         <div className="row mt-2">
           <div className="col-sm-4">
             <div className="card">

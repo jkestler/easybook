@@ -24,26 +24,13 @@ class App extends Component {
 
 
   componentDidUpdate = () => {
-    // localStorage.setItem('localUser', JSON.stringify(user));
-    // localStorage.setItem('loggedIn', this.state.loggedIn);
-    // JSON.parse(localStorage.getItem('loggedIn'));
-    // localStorage.setItem('loggedIn', this.state.loggedIn);
-    // localStorage.setItem('email', this.state.email);
-    // localStorage.setItem('id', this.state.id);
   }
   
   componentDidMount = () => {
     this.setState({
       loggedIn: JSON.parse(localStorage.getItem('loggedIn')),
     })
-    // this.setState({
-    //   email: JSON.parse(localStorage.getItem('email'))
-    // })
-    // localStorage.getItem('loggedIn');
-    // localStorage.getItem('email');
-    // localStorage.getItem('id');
-    // const loginItem = lovcalStorage.getItem('loggedIn'); 
-    // this.setState({ loggedIn: loginItem });
+  
   }
 
 
