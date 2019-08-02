@@ -22,7 +22,7 @@ class App extends Component {
 
   }
 
-  
+
   componentDidUpdate = () => {
     // localStorage.setItem('localUser', JSON.stringify(user));
     // localStorage.setItem('loggedIn', this.state.loggedIn);
@@ -61,7 +61,6 @@ class App extends Component {
     // if (this.state.loggedIn) {
     //   localStorage.setItem('loggedIn', true);
     // }
-
   }
 
   signOut = () => {
