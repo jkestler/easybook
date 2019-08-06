@@ -9,8 +9,9 @@ class Bookmarks extends Component {
   super(props);
   this.state = {
     toggle: false,
+    folderName: '',
     userEmail: {},
-    userFolders: {},
+    userFolders: [],
     userBookmarks: {}
   }
 }
@@ -33,6 +34,29 @@ class Bookmarks extends Component {
     })
   }
 
+
+  handleFolderSubmit = (e) => {
+    e.preventDefault();
+    axios.post('/folders/create', {
+        folderName: this.state.folderName,
+        // userId: 180
+      })
+      .then((res) => {
+        this.setState({
+          userFolders: [res.data]
+        })
+        console.log(this.state.folderNameValue);
+        console.log(this.state.userFolders);
+      });
+  }
+
+  handleFolderChange = (e) => {
+    // e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
 render() {
   
 return (
@@ -43,18 +67,25 @@ return (
     {/* <button className="btn btn-primary sidebar-heading " onClick={this.toggleClass} id="menu-toggle">Toggle</button> */}
       {/* <div className="sidebar-heading">Folders </div> */}
         <button className="btn btn-primary btn-sm" onClick={this.toggleClass} id="menu-toggle">Toggle Sidebar</button>
-      <div className="list-group list-group-flush">
+     <div className="list-group list-group-flush">
       
         <form className="form-inline list-group my-2 my-lg-0" id='search-input' >
           <input className="form-control m-0" type="search" placeholder="Search..." aria-label="Search" />
         </form>
         <button className='btn  btn-block btn-primary my-2' > Add Bookmark</button>
         <h5> Folders: </h5> 
-        <form className="form-inline list-group my-2 my-lg-0" id='search-input' >
-          <input className="form-control mb-2" type="search" placeholder="Add folder..." aria-label="Search" />
+
+        <form className="form-inline list-group my-2 my-lg-0" onSubmit={this.handleFolderSubmit} id='search-input' >
+          <input className="form-control mb-2" type="text" name='folderName' value={this.state.folderName} onChange={this.handleFolderChange} placeholder="Add folder..." />
         </form>
-        <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Bootstrap</a>
-        <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Bloc</a>
+        
+        {
+          this.state.userFolders.map((folder, index) => (
+            <div key={index}>
+              <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>{folder.folderName}</a>
+            </div>
+          ))
+        }
         <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Documentation</a>
         <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Courses</a>
         <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Github</a>
