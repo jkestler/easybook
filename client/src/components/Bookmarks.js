@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 // import { Link } from 'react-router-dom';
 import FolderIcon from 'react-ionicons/lib/IosFolderOpenOutline';
+import AddBookmark from './AddBookmark.js';
 
 class Bookmarks extends Component {
   constructor(props) {
@@ -12,10 +13,19 @@ class Bookmarks extends Component {
     folderName: '',
     userEmail: {},
     userFolders: [],
-    userBookmarks: {}
+    userBookmarks: {},
+    showAddBookmark: false,
+    currentFolder: '',
+    folderBookmarks: []
   }
 }
 
+  toggleAddBookmark = () => {
+    this.setState({
+      showAddBookmark: !this.state.showAddBookmark
+    });
+    console.log(this.state.showAddBookmark);
+  }
 
   toggleClass = () => {
     this.state.toggle ? this.setState({ toggle: false}) : this.setState({ toggle: true})
@@ -42,12 +52,14 @@ class Bookmarks extends Component {
         // userId: 180
       })
       .then((res) => {
-        this.setState({
-          userFolders: [res.data]
-        })
-        console.log(this.state.folderNameValue);
-        console.log(this.state.userFolders);
+        axios.get(`/user/${JSON.parse(localStorage.getItem('id'))}`)
+        .then(response => {
+          // console.log('RES.DATA', res);
+          this.setState({ 
+            userFolders: response.data.result.user.folders,
+          })
       });
+    })
   }
 
   handleFolderChange = (e) => {
@@ -57,22 +69,32 @@ class Bookmarks extends Component {
     })
   }
 
+  showFolder = (id) => {
+    axios.get(`/folders/${id}`)
+    .then((res) => {
+      this.setState({
+        folderBookmarks: res.data.folder.bookmarks
+      })
+      console.log(this.state.folderBookmarks);
+    })
+  }
+
 render() {
+
+  // this.bookmarkRow = [this.state.folderBookmarks[index-1], this.state.folderBookmarks[index], this.state.folderBookmarks[index+1]];
   
 return (
 
   <div className={(this.state.toggle ? 'd-flex toggled' : 'd-flex')} id='wrapper'>
 
     <div className="mr-2" id="sidebar-wrapper">
-    {/* <button className="btn btn-primary sidebar-heading " onClick={this.toggleClass} id="menu-toggle">Toggle</button> */}
-      {/* <div className="sidebar-heading">Folders </div> */}
-        <button className="btn btn-primary btn-sm" onClick={this.toggleClass} id="menu-toggle">Toggle Sidebar</button>
-     <div className="list-group list-group-flush">
+    <button className="btn btn-primary btn-sm" onClick={this.toggleClass} id="menu-toggle">Toggle Sidebar</button>
+      <div className="list-group list-group-flush">
       
         <form className="form-inline list-group my-2 my-lg-0" id='search-input' >
-          <input className="form-control m-0" type="search" placeholder="Search..." aria-label="Search" />
+          <input className="form-control m-0" type="search" placeholder="Search Bookmarks..." aria-label="Search" />
         </form>
-        <button className='btn  btn-block btn-primary my-2' > Add Bookmark</button>
+        <button className='btn  btn-block btn-primary my-2' onClick={this.toggleAddBookmark} > Add Bookmark</button>
         <h5> Folders: </h5> 
 
         <form className="form-inline list-group my-2 my-lg-0" onSubmit={this.handleFolderSubmit} id='search-input' >
@@ -82,7 +104,7 @@ return (
         {
           this.state.userFolders.map((folder, index) => (
             <div key={index}>
-              <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>{folder.folderName}</a>
+              <button onClick={() => this.showFolder(folder.id)} className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>{folder.folderName}</button>
             </div>
           ))
         }
@@ -91,19 +113,19 @@ return (
         <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Github</a>
         <a href="/" className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>Jobs</a>
         
+      {this.state.showAddBookmark ?  <AddBookmark userFolders={this.state.userFolders} toggleAddBookmark={this.toggleAddBookmark} showAddBookmark={this.state.showAddBookmark} /> : '' }
       </div>
     </div>
     
     <div id="page-content-wrapper">
 
-      {/* <nav className="navbar navbar-expand-lg navbar-light"> */}
-        
-
-       
-      {/* </nav> */}
-
       <div className="container-fluid" id='bookmark-container'>
-        <div className="row mt-2">
+        {
+          this.state.folderBookmarks.map((bookmark, index) => {
+
+          })
+        }
+        <div className="row mt-2">  
           <div className="col-sm-4">
             <div className="card">
               <div className="card-body">
