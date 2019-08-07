@@ -5,7 +5,7 @@ module.exports = {
   create(req, res, next) {
     let newFolder = {
       folderName: req.body.folderName,
-      userId: req.body.userId
+      userId: req.user.id
     };
 
     folderQueries.addFolder(newFolder, (err, folder) => {
