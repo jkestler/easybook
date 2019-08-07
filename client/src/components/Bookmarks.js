@@ -120,11 +120,7 @@ return (
     <div id="page-content-wrapper">
 
       <div className="container-fluid" id='bookmark-container'>
-        {
-          this.state.folderBookmarks.map((bookmark, index) => {
 
-          })
-        }
         <div className="row mt-2">  
           <div className="col-sm-4">
             <div className="card">
