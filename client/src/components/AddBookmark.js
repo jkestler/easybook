@@ -21,6 +21,7 @@ class AddBookmark extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.toggleAddBookmark();
     axios.post(`folders/${this.state.folderId}/bookmark/create`, {
       url: this.state.url,
       title: this.state.title,
@@ -28,7 +29,7 @@ class AddBookmark extends React.Component {
       screenshot: this.state.screenshotURL,
     })
     .then((res) => {
-      console.log(res.data);
+      this.props.showFolder(JSON.parse(localStorage.getItem('folderId')));
     })
 
   }
@@ -50,7 +51,7 @@ class AddBookmark extends React.Component {
     
     return (
       <div> 
-        <Modal isOpen={this.props.showAddBookmark}> 
+        <Modal isOpen={this.props.toggleAddBookmark}> 
           <ModalHeader className='m-auto'> Add Bookmark </ModalHeader>
           <ModalBody>
             <form className="form-inline list-group my-lg-0" id='search-input' onSubmit={this.handleSubmit}>
@@ -62,11 +63,11 @@ class AddBookmark extends React.Component {
                 <option selected> Choose folder...</option>
                 {
                   this.props.userFolders.map((folder, index) => (
-                    <option name='folderId' value={folder.id} > { folder.folderName } </option>
+                    <option key={index} name='folderId' value={folder.id} > { folder.folderName } </option>
                   ))
                 }
                 </select>
-              <button type='submit' className='btn  btn-block btn-primary my-2' > Add Bookmark</button>
+              <button type='submit' className='btn  btn-block btn-primary my-2' onClick={this.showBookmarks} > Add Bookmark</button>
               <button className='btn  btn-block btn-danger my-2' onClick={this.props.toggleAddBookmark}> Cancel </button>
             </form>
           </ModalBody>
