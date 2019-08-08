@@ -41,7 +41,7 @@ import logoLogout from '../assets/img/logo_transparent.png';
       <nav className='navbar mr-3' id='navBar'> 
         <a href='/bookmarks' className='navbar-brand mt-4'><img id='loginLogo' src={logo} alt='logo'/></a>
         <Link to='/signin' className='nav-link mt-4 text-primary btn btn-primary bg-white landing-nav btn-lg' > Log In </Link>
-        <Link to='/signup' className='nav-link mt-4 ml-3 text-white btn bg-primary btn-lg' landing-nav> Sign Up</Link>
+        <Link to='/signup' className='nav-link mt-4 ml-3 text-white btn bg-primary btn-lg'> Sign Up</Link>
       </nav> 
 
       )
