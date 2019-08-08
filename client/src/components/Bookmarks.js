@@ -55,7 +55,6 @@ class Bookmarks extends Component {
       .then((folders) => {
         console.log(this.state);
       })
-      console.log(this.state);
     })
   }
 
@@ -113,7 +112,9 @@ render() {
   return (
     
     <div className={(this.state.toggle ? 'd-flex toggled' : 'd-flex')} id='wrapper'>
+
       {this.state.showBookmark ? <ShowBookmark  bookmarkUrl={this.state.bookmark.url} bookmarkDescription={this.state.bookmark.description} bookmarkScreenshot={this.state.bookmark.screenshot} bookmarkTitle={this.state.bookmark.title} toggleShowBookmark={this.toggleShowBookmark} /> : '' }
+      
       <div className="mr-2" id="sidebar-wrapper">
         <button className="btn btn-primary btn-sm" onClick={this.toggleClass} id="menu-toggle">Toggle Sidebar</button>
         <div id='folder-list' className="list-group list-group-flush">
