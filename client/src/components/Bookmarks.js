@@ -149,7 +149,7 @@ render() {
           {
             this.state.folderBookmarks.map((bookmark, index) => (    
               <div className='bookmark-box' key={index} onClick={() => this.showBookmark(bookmark.id)} >  
-                <div className='bookmark-card' style={{backgroundImage: `url(${bookmark.screenshot})`}}>
+                <div className='bookmark-card' style={{backgroundImage: `url(${bookmark.screenshot}), url('https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image')`}}>
                   <div id='bookmark-img' className='card-body'>
                     <h5 className='card-title'> { bookmark.title } </h5>
                   </div>
