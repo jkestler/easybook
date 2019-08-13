@@ -184,7 +184,7 @@ class Bookmarks extends Component {
                   )}
                 />
               
-              :
+              : 
 
               this.state.folderBookmarks.map((bookmark, index) => (    
                 <div className='bookmark-box' key={index} onClick={() => this.showBookmark(bookmark.id)} >  
