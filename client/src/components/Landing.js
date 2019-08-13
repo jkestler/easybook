@@ -17,26 +17,26 @@ const Landing = (props) => {
         </div>
         <div className='row' id='heading-row'>
           <div className='col-lg-4 col-sm-12 feature-column'>
-            <div class='card bg-dark border-dark' id='landingCards' >
-              <img class='card-img-top' src={folderIcon} alt='search icon'/>
-              <div class='card-body text-dark'>
-                <p class='card-text'>Quickly search through your collections to instantly find what you need.</p>
+            <div className='card bg-dark border-dark' id='landingCards' >
+              <img className='card-img-top' src={folderIcon} alt='search icon'/>
+              <div className='card-body text-dark'>
+                <p className='card-text'>Quickly search through your collections to instantly find what you need.</p>
               </div>
             </div>
           </div>
           <div className='col-lg-4 col-sm-12 feature-column'>
-            <div class='card bg-dark border-dark ' id='landingCards'>
-              <img class='card-img-top' src={searchIcon} alt='tag icon'/>
-              <div class='card-body text-dark'>
-                <p class='card-text'>Add re-usable tags to your bookmarks to link resources in different folders.</p>
+            <div className='card bg-dark border-dark ' id='landingCards'>
+              <img className='card-img-top' src={searchIcon} alt='tag icon'/>
+              <div className='card-body text-dark'>
+                <p className='card-text'>Add re-usable tags to your bookmarks to link resources in different folders.</p>
               </div>
             </div>
           </div>
           <div className='col-lg-4 col-sm-12 feature-column'>
-            <div class='card bg-dark border-dark' id='landingCards'>
-              <img class='card-img-top' src={tagIcon} alt='folder icon'/>
-               <div class='card-body text-dark'>
-                <p class='card-text'> Organize your bookmarks into customizable folders and access them easily with folder filtering. </p>
+            <div className='card bg-dark border-dark' id='landingCards'>
+              <img className='card-img-top' src={tagIcon} alt='folder icon'/>
+               <div className='card-body text-dark'>
+                <p className='card-text'> Organize your bookmarks into customizable folders and access them easily with folder filtering. </p>
               </div>
             </div>
           </div>
@@ -48,69 +48,3 @@ const Landing = (props) => {
 };
 
 export default Landing;
-
-
-      {/* /* <div className="landing-features">
-        <h4> Organize your life with easyBook  </h4>
-        <Row className="feature-row">
-          <Col lg="6" sm="12">
-           <p> Organize your bookmarks into customizable folders and access them easily with folder filtering </p>
-          </Col>
-          <Col lg="6" sm="12">
-           <img src={folderIcon} alt="folder"/>
-          </Col>
-        </Row>
-        <Row className="feature-row">
-          <Col lg="6" sm="12">
-            <img src={tagIcon} alt="tag" /> 
-          </Col>
-          <Col lg="6" sm="12">
-            <p> Add re-usable tags to your bookmarks to link resources in different folders</p>
-          </Col>
-        </Row> */} 
-   {/* <div className="landing">
-      <div className="jumbotron">
-        <Jumbotron fluid>
-          <Container fluid className="jumboContainer">
-            <h1 className="display-3">Welcome to easyBook</h1>
-            <p className="lead">An intuitive organization tool for all of your bookmarks.</p>
-            <Button> Sign Up! </Button>
-          </Container>
-        </Jumbotron>
-      </div>
-      <h1 className="feature-header"> Organize all of your bookmarks </h1>
-      <div className="feature-cards">
-        <Row> 
-          <Col lg="6" md="12" className="feature"> 
-              <h4> This is the first feature</h4>
-          </Col>
-          <Col lg="6" md="12" className="feature">
-            <h4> This is the second feature</h4>
-          </Col>
-          <Col lg="4" md="12" className="feature">
-            <h4> This is the third feature</h4>  
-          </Col>
-        </Row>
-      </div>
-    </div> */}
-  //  <Col className="landingCard" lg="4" sm="12">
-  //         <Card body>
-  //           <CardTitle>Special Title Treatment</CardTitle>
-  //           <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-  //           <Button>Go somewhere</Button>
-  //         </Card>
-  //       </Col>
-  //       <Col className="landingCard" lg="4" sm="12">
-  //         <Card body>
-  //           <CardTitle>Special Title Treatment</CardTitle>
-  //           <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-  //           <Button>Go somewhere</Button>
-  //         </Card>
-  //       </Col>
-  //       <Col className="landingCard" lg="4" sm="12">
-  //         <Card body>
-  //           <CardTitle>Special Title Treatment</CardTitle>
-  //           <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-  //           <Button>Go somewhere</Button>
-  //         </Card>
-  //       </Col> 
