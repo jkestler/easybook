@@ -1,3 +1,5 @@
+/* * ------------ App ------------ * */
+
 .App {
   box-sizing: border-box;
   /* font-family: 'Lato', 'Arial', sans-serif; */
@@ -14,6 +16,7 @@ Body {
   background-image: url('./assets/img/cool-background4.png');
   /* overflow-x: hidden; */
   /* overflow-y: hidden; */
+  font-family: 'Archivo', sans-serif;
 }
 
 
@@ -151,7 +154,6 @@ Body {
 }
 
 
-
 #loginHeaders {
   text-align: center;
   font-size: 3em;
@@ -161,67 +163,12 @@ Body {
 
 /* * ------------ Main Sidebar ------------ * */
 
-/* 
-#sidebar-wrapper {
-  min-height: 86vh;
-  margin-left: -15rem;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
-  /* border-radius: 30px; */
-  /* max-width: 100vw; */
-  /* min-width: 200px; */
-  /* height: 80vh; */
-  /* width: 29vw; */
-  /* overflow-x: scroll;   */
-  /* z-index: 2; */
-/* } */
-/* 
-#sidebar-wrapper .sidebar-heading { */
-  /* padding: 0.875rem 1.25rem; */
-  /* font-size: 1.2rem; */
-  
-/* } */
-/* 
-#sidebar-wrapper .list-group {
-  width: 15rem;
-  margin-top: 9%; */
-  /* height: 85vh !important;  */
-/* } */
+#sidebar-folder-text {
+  /* background: rgba(255, 255, 255, 0.608); */
+  color: #ffffff;
+  text-shadow: 1.5px 1.5px #060101;
+}
 
-
-
-/* 
-#wrapper.toggled #sidebar-wrapper {
-  margin-left: 0; */
-  
-/* } */
-
-/* @media (min-width: 768px) { 
-  #sidebar-wrapper {
-    margin-left: 0;
-  } */
-  
-/*   
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
-  }
-} */
-
-/* #sidebar-wrapper {
-  min-height: 86vh;
-  margin-left: -15rem;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
-  /* border-radius: 30px; */
-  /* max-width: 100vw; */
-  /* min-width: 200px; */
-  /* height: 80vh; */
-  /* width: 29vw; */
-  /* overflow-x: scroll;   */ 
 
 #sidebar-wrapper {
   /* margin-top: 15px; */
@@ -250,10 +197,6 @@ Body {
   width: 15rem;
 }
 
-#page-content-wrapper {
-  min-width: 100vw;
-}
-
 #wrapper.toggled #sidebar-wrapper {
   margin-left: 0;
 }
@@ -261,6 +204,7 @@ Body {
 @media (min-width: 768px) {
   #sidebar-wrapper {
     margin-left: 0;
+    margin-top: 10px;
   }
 
   #page-content-wrapper {
@@ -273,50 +217,41 @@ Body {
   }
 }
 
-/* * ----Main Sidebar 2---- */ 
-
-#page-content-wrapper {
-  /* min-width: 100vw; */
-  /* overflow: scroll; */
-  /* height: 85vh; */
-  /* max-height: 100vh; */
-  /* height: 100vh !important; */
-  /* height: 720px; */
-    /* min-width: 20vw; */
-  /* width: 100%; */
-  /* height: 95vh; */
-    /* margin: 10px; */
-    /* position: relative; */
-    /* top: -20  */
+#add-bookmark {
+  z-index: 2;
 }
+
+/* * ------------ Main Sidebar 2 ------------ * */
 
 #search-input input{
   width: 100% !important;
 }
 
 #menu-toggle {
-  right: 3%;
-  top: 9%;
-  position: absolute
+  top: 27px;
+  right: 138px;
+  position: absolute;
 }
-/* * ---- Bookmark Container ---- */
+
+/* * ------------ Bookmark Container ------------ * */
  
 #bookmark-container {
   height: 85vh;
-  /* height: 80vh !important; */
   overflow: scroll;
-  /* position: relative; */
   display: flex;
-  /* width: 100%; */
-  /* ! flex-wrap: wrap; */
-  flex-flow: row wrap;
+  flex-flow: column wrap;
+  flex-direction: row;
+  width: 100%;
+  align-content: flex-start;
   flex-wrap: wrap;
-
+  overflow: auto;
   max-width: 85vw;
 }
+
 .bookmark-box {
-  margin: 5px;
-  /* min-width: 50%; */
+  /* margin-left: 10px; */
+  /* padding-left: 20px; */
+  /* align-self: flex-start; */
 }
 
 .bookmark-card {
@@ -327,21 +262,88 @@ Body {
   /* padding: 15%; */
   
   /* margin-left: 20%; */
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 10px;
+  align-self: flex-start;
+  box-shadow: inset 0 10px 15px #f2f2f273;
+  border: .5px solid #f6f6f6dd;
+  margin-left: 10px;
 }
-/* 
-#boomkark-img {
-  height: 200px;
-  width: 250px;
+
+.bookmark-box {
+  opacity: .91;
+}
+
+.bookmark-box:hover {
+  transition: all 0.5s ease;
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+/* @media (max-width: 1500px) {
+  .bookmark-card {
+    margin-left: 200px;
+  }
 } */
-
-.bookmark-box>* {
-  flex: 1 1 160px;
-  /* margin: 10px; */
+@media (max-width: 1385px) {
+  .bookmark-card {
+    height: 175px;
+    width: 230px;
+    margin: auto;
+  }
 }
 
-/* Add Bookmark Form */
+@media (max-width: 1264px) {
+  .bookmark-card {
+    margin: auto 25px;
+    width: 200px;
+  }
+}
+@media (max-width: 1080px) {
+  .bookmark-card {
+    /* height: 1px; */
+    margin-top: 0;
+    margin-left:5px; 
+  }
+  
+}
+
+@media(max-width: 1018px) {
+  .bookmark-card {
+    margin-left: auto;
+    width: 160px;
+  }
+}
+@media(max-width: 881px) {
+  .bookmark-card {
+    margin: auto; 
+  }
+}
+
+@media(max-width: 805px) {
+  .bookmark-card {
+    width: 130px;
+    margin: auto;
+  }
+}
+
+@media(max-width: 510px) {
+  .bookmark-card {
+    margin-left: 20px;
+    width: 100px;
+  }
+}
+.card-title {
+  /* backdrop-filter: blur(10px); */
+  /* margin: 25% auto; */
+  text-align: center;
+  color: black;
+}
+
+
+/* * ------------ Add Bookmark Form  ------------ * */
 
 #textarea {
   width: 100%;
@@ -356,9 +358,10 @@ Body {
   z-index: 2;
 }
 
-/* .bookmark-wrapper {
-  border: 2px dotted black;
+/* * ------------ Show Bookmark Form ------------ * */
+
+#show-bookmark-img {
   width: 100%;
-  flex-flow: row wrap;
-} */
+  height: 250px;
+}
 
