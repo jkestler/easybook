@@ -83,6 +83,7 @@ class Bookmarks extends Component {
         .then(response => {
           this.setState({ 
             userFolders: response.data.result.user.folders,
+            folderName: ''
           })
       });
     });
@@ -119,7 +120,6 @@ class Bookmarks extends Component {
       this.setState({
         bookmark: res.data.bookmark
       });
-      console.log(res);
     })
   }
 
@@ -140,8 +140,8 @@ class Bookmarks extends Component {
             <form className="form-inline list-group my-2 my-lg-0" id='search-input' >
               <input className="form-control m-0" type="search" placeholder="Search Bookmarks..." value={this.state.searchValue} onChange={this.handleSearchChange}  aria-label="Search" />
             </form>
-            <button className='btn  btn-block btn-primary my-2' onClick={this.toggleAddBookmark} > Add Bookmark</button>
-            <h5> Folders: </h5> 
+            <button className='btn  btn-block btn-primary my-2' id='add-bookmark' onClick={this.toggleAddBookmark} > Add Bookmark</button>
+            <h4 id='sidebar-folder-text'> Folders </h4> 
 
             <form className="form-inline list-group my-2 my-lg-0" onSubmit={this.handleFolderSubmit} id='search-input' >
               <input className="form-control mb-2" type="text" name='folderName' value={this.state.folderName} onChange={this.handleFolderChange} placeholder="Add folder..." />
@@ -150,7 +150,7 @@ class Bookmarks extends Component {
             {
               this.state.userFolders.map((folder, index) => (
                 <div key={index}>
-                  <button onClick={(id) => this.showFolder(folder.id)} className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>{folder.folderName}</button>
+                  <button onClick={(id) => this.showFolder(folder.id)} id='folder-links' className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3 active'color="#ffffff"/>{folder.folderName}</button>
                 </div>
               ))
             }
@@ -162,7 +162,7 @@ class Bookmarks extends Component {
         
         <div id="page-content-wrapper">
 
-          <div id='bookmark-container' className='container-fluid'>
+          <div id='bookmark-container' className='container'>
 
             {
               this.state.searchValue ? 
@@ -172,12 +172,12 @@ class Bookmarks extends Component {
                   renderResults={results => (
                     <div> 
                       { results.map(bookmark => (
-                          <div className='bookmark-box' key={bookmark.id} onClick={() => this.showBookmark(bookmark.id)} >  
+                          <div className='bookmark-box' onClick={() => this.showBookmark(bookmark.id)} >  
                             <div className='bookmark-card' style={{backgroundImage: `url(${bookmark.screenshot}), url('https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image')`}}>
                               <div id='bookmark-img' className='card-body'>
-                                <h5 className='card-title'> { bookmark.title } </h5>
                               </div>
                             </div>
+                            <h6 className='m-0 card-title'>  { bookmark.title } </h6> 
                           </div>
                         ))}
                     </div> 
@@ -189,10 +189,10 @@ class Bookmarks extends Component {
               this.state.folderBookmarks.map((bookmark, index) => (    
                 <div className='bookmark-box' key={index} onClick={() => this.showBookmark(bookmark.id)} >  
                   <div className='bookmark-card' style={{backgroundImage: `url(${bookmark.screenshot}), url('https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image')`}}>
-                    <div id='bookmark-img' className='card-body'>
-                      <h5 className='card-title'> { bookmark.title } </h5>
-                    </div>
+                    {/* <div id='bookmark-img' className='card-body'>
+                    </div> */}
                   </div>
+                    <h6 className='m-0 card-title'> <em> { bookmark.title } </em> </h6>
                 </div>
               ))
             }

@@ -22,12 +22,12 @@ class ShowBookmark extends React.Component {
     return (
       <div> 
         <Modal isOpen={true}> 
-          <ModalHeader className='m-auto'> {this.props.bookmarkTitle} </ModalHeader>
+          <ModalHeader className='m-auto display-4'> <em> {this.props.bookmarkTitle} </em> </ModalHeader>
           <ModalBody>
-           <h2> Description:</h2>
-           <p>  {this.props.bookmarkDescription } </p>
-           <img src={this.props.bookmarkScreenshot} alt='screenshot' />
-           <a target='_blank' rel='noopener noreferrer' href={this.props.bookmarkUrl}> {this.props.bookmarkUrl} </a>
+           <h6> Description: </h6>
+           <h4>  <em>{this.props.bookmarkDescription } </em></h4>
+           <img id='show-bookmark-img' src={this.props.bookmarkScreenshot} alt='screenshot' />
+           <a target='_blank' rel='noopener noreferrer' href={this.props.bookmarkUrl}> <h4> {this.props.bookmarkUrl} </h4> </a>
           </ModalBody>
           <button className='btn btn-primary' onClick={this.props.toggleShowBookmark}> Close </button> 
         </Modal>
