@@ -107,6 +107,9 @@ Body {
   margin: 0% 35%;
 }
 
+#search-input {
+  z-index: 2
+}
 
 #landingCards {
   background-color: #ffffff75 !important;

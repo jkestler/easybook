@@ -22,6 +22,18 @@ module.exports = {
     .catch((err) => {
       callback(err);
     })
+  },
+
+  findAllBookmarks(id, callback) {
+    return Bookmark.findAll({
+      where: { userId: id }
+    })
+    .then((bookmarks) => {
+      callback(null, bookmarks);
+    })
+    .catch((err) => {
+      callback(err);
+    })
   }
   
 }

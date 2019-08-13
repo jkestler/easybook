@@ -37,6 +37,11 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'folderId',
       onDelete: 'CASCADE'
     });
+
+    Bookmark.belongsTo(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE'
+    })
     
     // Bookmark.belongsToMany(models.Tag, {
     //   through: models.TagBookmark,

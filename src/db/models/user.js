@@ -27,6 +27,18 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId',
       as: 'folders'
     });
+
+    User.hasMany(models.Bookmark, {
+      foreignKey: 'userId',
+      as: 'bookmarks'
+    });
+
+    User.afterCreate((user, callback) => {
+      return models.Folder.create({
+        folderName: 'Other',
+        userId: user.id
+      })
+    })
   };
 
   return User;

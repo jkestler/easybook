@@ -11,6 +11,8 @@ router.post('/folders/:folderId/bookmark/create', bookmarkController.create);
 // show individual bookmark
 router.get('/folders/:folderId/bookmark/:id', bookmarkController.showBookmark);
 
+// get all user bookmarks for search 
+router.get('/user/:userId/bookmarks', bookmarkController.getAll);
 
 // * Nice to have 
 

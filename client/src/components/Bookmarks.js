@@ -5,6 +5,7 @@ import axios from 'axios';
 import FolderIcon from 'react-ionicons/lib/IosFolderOpenOutline';
 import AddBookmark from './AddBookmark.js';
 import ShowBookmark from './ShowBookmark.js';
+import FilterResults from 'react-filter-search';
 
 class Bookmarks extends Component {
   constructor(props) {
@@ -19,7 +20,9 @@ class Bookmarks extends Component {
     currentFolder: '',
     folderBookmarks: [],
     bookmark: [],
-    showBookmark: false
+    showBookmark: false,
+    allBookmarks: [],
+    searchValue: ''
   }
 }
 
@@ -44,18 +47,24 @@ class Bookmarks extends Component {
   componentDidMount = () => {
 
     axios.get(`/user/${JSON.parse(localStorage.getItem('id'))}`)
-    .then(res => {
-      console.log('RES.DATA', res);
-      this.setState({ 
-        userEmail: res.data.result.user.email,
-        userFolders: res.data.result.user.folders,
-        userBookmarks: res.data.result.user.folders.bookmarks
-      })
-      axios.get(`/folders/${JSON.parse(localStorage.getItem('folderId'))}`)
-      .then((folders) => {
-        console.log(this.state);
-      })
-    })
+      .then(res => {
+        console.log('RES.DATA', res);
+        this.setState({ 
+          userEmail: res.data.result.user.email,
+          userFolders: res.data.result.user.folders,
+          userBookmarks: res.data.result.user.folders.bookmarks
+        })
+        axios.get(`/folders/${JSON.parse(localStorage.getItem('folderId'))}`)
+          .then((folders) => {
+            axios.get(`/user/${JSON.parse(localStorage.getItem('id'))}/bookmarks`)
+            .then((bookmarks) => {
+              this.setState({
+                allBookmarks: bookmarks.data.bookmarks
+              });
+              console.log('ALL BOOKMARKS', this.state.allBookmarks);
+            });
+          });
+      });
   }
 
 
@@ -73,7 +82,13 @@ class Bookmarks extends Component {
             userFolders: response.data.result.user.folders,
           })
       });
-    })
+    });
+  }
+
+  handleSearchChange = (e) => {
+    this.setState({
+      searchValue: e.target.value
+    });
   }
 
   handleFolderChange = (e) => {
@@ -120,7 +135,7 @@ render() {
         <div id='folder-list' className="list-group list-group-flush">
         
           <form className="form-inline list-group my-2 my-lg-0" id='search-input' >
-            <input className="form-control m-0" type="search" placeholder="Search Bookmarks..." aria-label="Search" />
+            <input className="form-control m-0" type="search" placeholder="Search Bookmarks..." value={this.state.searchValue} onChange={this.handleSearchChange}  aria-label="Search" />
           </form>
           <button className='btn  btn-block btn-primary my-2' onClick={this.toggleAddBookmark} > Add Bookmark</button>
           <h5> Folders: </h5> 
@@ -132,7 +147,7 @@ render() {
           {
             this.state.userFolders.map((folder, index) => (
               <div key={index}>
-                <button onClick={() => this.showFolder(folder.id)} className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>{folder.folderName}</button>
+                <button onClick={(id) => this.showFolder(folder.id)} className="list-group-item list-group-item-action bg-dark text-white"><FolderIcon className='mr-3'color="#ffffff"/>{folder.folderName}</button>
               </div>
             ))
           }
@@ -147,6 +162,27 @@ render() {
         <div id='bookmark-container' className='container-fluid'>
 
           {
+            this.state.searchValue ? 
+              <FilterResults 
+                value={this.state.searchValue}
+                data={this.state.allBookmarks}
+                renderResults={results => (
+                  <div> 
+                    { results.map(bookmark => (
+                        <div className='bookmark-box' key={bookmark.id} onClick={() => this.showBookmark(bookmark.id)} >  
+                          <div className='bookmark-card' style={{backgroundImage: `url(${bookmark.screenshot}), url('https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image')`}}>
+                            <div id='bookmark-img' className='card-body'>
+                              <h5 className='card-title'> { bookmark.title } </h5>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                  </div> 
+                )}
+              />
+            
+            :
+
             this.state.folderBookmarks.map((bookmark, index) => (    
               <div className='bookmark-box' key={index} onClick={() => this.showBookmark(bookmark.id)} >  
                 <div className='bookmark-card' style={{backgroundImage: `url(${bookmark.screenshot}), url('https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image')`}}>
@@ -154,7 +190,7 @@ render() {
                     <h5 className='card-title'> { bookmark.title } </h5>
                   </div>
                 </div>
-               </div>
+              </div>
             ))
           }
 
