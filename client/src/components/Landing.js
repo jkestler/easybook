@@ -17,6 +17,7 @@ const Landing = (props) => {
 export default Landing;
 
 
+// eslint-disable-next-line no-lone-blocks
 {/* <div className='container'>
   <div className='row'>
     <div className='col-lg-12' id='heading-text'>
