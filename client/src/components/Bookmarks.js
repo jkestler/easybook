@@ -67,6 +67,12 @@ class Bookmarks extends Component {
       });
   }
 
+  updateSearch = (bookmarks) => {
+    this.setState({
+      allBookmarks: bookmarks
+    });
+  }
+
 
   handleFolderSubmit = (e) => {
     e.preventDefault();
@@ -152,7 +158,7 @@ render() {
             ))
           }
           
-          {this.state.showAddBookmark ?  <AddBookmark showFolder={this.showFolder} userFolders={this.state.userFolders} toggleAddBookmark={this.toggleAddBookmark} showAddBookmark={this.state.showAddBookmark} /> : '' }
+          {this.state.showAddBookmark ?  <AddBookmark showFolder={this.showFolder} updateSearch={this.updateSearch} userFolders={this.state.userFolders} toggleAddBookmark={this.toggleAddBookmark} showAddBookmark={this.state.showAddBookmark} /> : '' }
          
         </div> 
       </div>

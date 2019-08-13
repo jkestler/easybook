@@ -30,6 +30,10 @@ class AddBookmark extends React.Component {
     })
     .then((res) => {
       this.props.showFolder(JSON.parse(localStorage.getItem('folderId')));
+      axios.get(`/user/${JSON.parse(localStorage.getItem('id'))}/bookmarks`)
+      .then((bookmarks) => {
+        this.props.updateSearch(bookmarks.data.bookmarks);
+      })
     })
 
   }
