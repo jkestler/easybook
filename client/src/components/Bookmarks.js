@@ -10,7 +10,7 @@ class Bookmarks extends Component {
   constructor(props) {
   super(props);
   this.state = {
-    toggle: false,
+    toggle: this.props.toggle,
     folderName: '',
     userEmail: {},
     userFolders: [],
@@ -129,12 +129,10 @@ class Bookmarks extends Component {
     
     return (
       
-      <div className={(this.state.toggle ? 'd-flex toggled' : 'd-flex')} id='wrapper'>
-
-        {this.state.showBookmark ? <ShowBookmark  bookmarkUrl={this.state.bookmark.url} bookmarkDescription={this.state.bookmark.description} bookmarkScreenshot={this.state.bookmark.screenshot} bookmarkTitle={this.state.bookmark.title} toggleShowBookmark={this.toggleShowBookmark} /> : '' }
+      <div className={(this.props.toggle ? 'd-flex toggled' : 'd-flex')} id='wrapper'>
         
+        {this.state.showBookmark ? <ShowBookmark  bookmarkUrl={this.state.bookmark.url} bookmarkDescription={this.state.bookmark.description} bookmarkScreenshot={this.state.bookmark.screenshot} bookmarkTitle={this.state.bookmark.title} toggleShowBookmark={this.toggleShowBookmark} /> : '' }
         <div className="mr-2" id="sidebar-wrapper">
-          <button className="btn btn-primary btn-sm" onClick={this.toggleClass} id="menu-toggle">Toggle Sidebar</button>
           <div id='folder-list' className="list-group list-group-flush">
           
             <form className="form-inline list-group my-2 my-lg-0" id='search-input' >
@@ -163,7 +161,7 @@ class Bookmarks extends Component {
         <div id="page-content-wrapper">
 
           <div id='bookmark-container' className='container'>
-
+          
             {
               this.state.searchValue ? 
                 <FilterResults 

@@ -36,6 +36,7 @@ import logoLogout from '../assets/img/logo_transparent_white.png';
         <nav className='navbar navbar-expand-lg fixed-top' >
           <a href='/bookmarks' className='navbar-brand'><img id='logoutLogo' src={logoLogout} alt='logo' /></a>
           <Link to='/signin' className='nav-link landing-nav' onClick={this.props.signoutUser}> Log Out </Link>
+          <button className="btn btn-primary" onClick={() => this.props.toggleClass()} id="menu-toggle">Toggle Sidebar</button>
         </nav>
 
       ) : (

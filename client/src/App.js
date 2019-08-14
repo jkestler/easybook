@@ -18,6 +18,7 @@ class App extends Component {
       loggedIn: false,
       email: null,
       id: null,
+      toggle: false
     }
 
   }
@@ -63,13 +64,18 @@ class App extends Component {
   }
 
 
+  toggleClass = () => {
+    this.state.toggle ? this.setState({ toggle: false }) : this.setState({ toggle: true})
+  }
+
+
 
 
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <NavBar loggedIn={this.state.loggedIn} signoutUser={() => this.signOut()}  />
+          <NavBar loggedIn={this.state.loggedIn} toggleClass={() => this.toggleClass()} signoutUser={() => this.signOut()}  />
           <Switch> 
             <Route exact path='/' component={Landing} />
             <Route 
@@ -88,7 +94,10 @@ class App extends Component {
             />  
             <Route 
               path='/bookmarks' 
-              component={Bookmarks}
+              render={() => 
+                <Bookmarks
+                  toggle={this.state.toggle}
+                />}
             />
           </Switch>
         </div>
