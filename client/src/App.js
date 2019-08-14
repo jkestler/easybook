@@ -18,7 +18,7 @@ class App extends Component {
       loggedIn: false,
       email: null,
       id: null,
-      toggle: false
+      toggle: true
     }
 
   }
@@ -107,46 +107,3 @@ class App extends Component {
 }
  
 export default App; 
-
-
-
-    // axios.get('/user/signout')
-    //   .then(res => {
-    //     if (!res.data.user) {
-    //       this.setState({
-    //         loggedIn: false,
-    //         email: null,
-    //         id: null
-    //       });
-          
-    //     } else {
-    //       console.log('Could not sign out user...');
-    //     }
-    //   }
-    // )
-    // this.setState({
-    //   loggedIn: false,
-    //   email: null,
-    //   id: null
-    // })
-  // getUser = () => {
-  //   axios.get('/user/signin/')
-  //     .then(res => { 
-  //       console.log('Get user respon dse: ', res.data);
-  //       if(res.data.user) {
-  //         console.log('Get User: There is a user saved in the server session: ');
-
-  //         this.setState({
-  //           loggedIn: true,
-  //           email: res.data.user.username,
-  //           id: res.data.user.id
-  //         })
-  //       } else {
-  //         console.log('Get user: no user');
-  //         this.setState({
-  //           loggedIn: false,
-  //           email: null
-  //         });
-  //       }
-  //     })
-  //   }

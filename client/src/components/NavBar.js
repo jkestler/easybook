@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-// import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, } from 'reactstrap';
 import { Link } from 'react-router-dom';
-// import Bootstrap from 'bootstrap';
-// import axios from 'axios'; 
-
-// import logo from '../assets/img/logo_transparent_white.png';
 import logoLogout from '../assets/img/logo_transparent_white.png';
 
  class NavBar extends Component {
@@ -15,21 +10,12 @@ import logoLogout from '../assets/img/logo_transparent_white.png';
       isOpen: false
     };
 
-
   }
 
-  componentDidUpdate = () => {
-    // JSON.parse(localStorage.getItem('loggedIn'));
-    // localStorage.getItem('loggedIn');
-  }
-  
 
   render() {
-    // const loggedIn = this.props.loggedIn ;
-    // console.log(this.props);
+
     return (
-
-
 
       this.props.loggedIn ? (
         
@@ -47,7 +33,6 @@ import logoLogout from '../assets/img/logo_transparent_white.png';
         </nav>
       )
 
-      
     )
 } 
   
