@@ -3,13 +3,11 @@
 .App {
   box-sizing: border-box;
   /* font-family: 'Lato', 'Arial', sans-serif; */
-  /* font-family: 'Karla', sans-serif; */
-  font-family: 'Archivo', sans-serif;
-  /* font-family: 'Vollkorn', serif; */
+  font-family: 'Karla', sans-serif;
+  /* font-family: 'Archivo', sans-serif; */
   /* height: 100%; */
   font-size: 20px;
-  margin: 1%;
-  /* height: 100vh;gvgvgv */
+
 }
 
 Body {
@@ -19,17 +17,27 @@ Body {
   font-family: 'Archivo', sans-serif;
 }
 
+#wrapper {
+  margin: 1%;
+}
+
 
 /* * ------------ NavBar ------------ * */
+.landing-nav {
+  margin-left: auto;
+}
+ 
+#navBar {
+  position: relative;
 
-
+}
 
 .navbar{ 
   background:#1a5d93;
   max-height: 8vh;
+  /* box-shadow: inset 0 0px 15px #3a169fe6; */
+  box-shadow: inset 0 0px 15px #346be0e6;
 }
-
-/* .nav-link , .navbar-brand{ color: #f4f4f4; cursor: pointer;} */
 
 .nav-link{ 
   margin-right: 1em !important;
@@ -40,46 +48,108 @@ Body {
   color: #55bbff; transition: 0.6s
 }
 
-.navbar-collapse{ 
-  justify-content: flex-end;
-}
-
-.navbar-toggler{ 
-  background:#fff !important;
-}
 
 #logoutLogo {
-  padding: 5px;
-  max-width: auto;
-  max-height: 7.5vh;
-  margin-left: 3rem;
-  /* z-index: -1; */
-  /* top: -100%; */
-  /* top: -70px; */
-
-  /* width: 110px; */
-  /* height: 109px; */
-  /* margin-top: 0px; */
-  /* position: absolute; */
-  /* top: -10px */
+  /* padding: 5px; */
+  max-width: 10vw;
+  max-height: 7.4vh;
+  margin-left: 3rem; 
 }
 
-
-
-#loginLogo {
-  padding: 0px;
-  margin-top: 10px;
-  width: 12rem;
-  height: 12rem;
-  top: -60px;
-  /* width: 110px; */
-  /* height: 109px; */
-  /* margin-top: 0px; */
-  position: absolute;
-  /* top: -10px */
-}
 
 /* * ------------ Landing ------------ * */
+
+
+@media (max-width: 1233px) {
+  .description {
+    min-width: 58%;
+    top: 25%;
+  }
+  #logoutLogo {
+    /* padding: 5px; */
+    max-width: 20vw;
+    max-height: 6vh;
+    margin-left: 3rem; 
+  }
+}
+
+@media (max-width: 750px ) {
+  .description {
+    min-width: 95%;
+    bottom: 20px;
+    margin-bottom: 25%;
+    background-color: #2f2bff2f; 
+    box-shadow: inset 0 0px 23px #2b4589;
+  }
+  
+}
+
+.header {
+  position: relative;
+  height: 83vh;
+  /* width: 100% !important; */
+  /* width: 100% !important; */
+  background-image: url('./assets/img/book-img.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  right: 0;
+  top: 0;
+  text-align: right;
+}
+
+.description {
+  /* color: white; */
+  position: absolute;
+  /* top: 25%; */
+  top: 49%;
+  right: 3%;
+  margin: auto;
+  width: 38%;
+  padding: 1.5em;
+  border-radius: 15px;
+  
+  /* background: #04229cdc !important; */
+  /* background: #0b90d7d8; */
+  box-shadow: inset 0 0px 23px #98b0ec;
+  /* margin: auto 25%; */
+  /* color: white; */
+  /* position: absolute; */
+  text-align: left;
+  /* top: 25%; */
+  /* top: 30%; */
+  /* width: 40%; */
+  /* margin: auto; */
+  /* padding: 2em; */
+  /* border-radius: 15px; */
+}
+
+#app-features {
+  margin: 4rem;
+}
+
+.feature-container {
+  /* background: #ffffff; */ 
+}
+#sign-up-button {
+  position: relative;
+  /* left: %; */
+
+}
+
+.footer-copyright {
+  background:#1a5d93;
+  color:#ffffff;
+}
+
+.github-link {
+  color: #a3d4ff
+}
 
 /* #landing-rows-1 {
   position: relative;
@@ -141,11 +211,11 @@ Body {
 /* }
 
 
-
+*/
 .card-img-top {
-  width: 6rem !important;
+  width: 10rem !important;
   margin: auto
-} */
+}
 
 
 /* .card-text { */
@@ -173,6 +243,7 @@ Body {
 #loginHeaders {
   text-align: center;
   font-size: 3em;
+  margin-top: 3rem;
   padding-bottom: 10px
 }
 

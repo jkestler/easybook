@@ -88,7 +88,7 @@ class App extends Component {
             />  
             <Route 
               path='/bookmarks' 
-              component={Bookmarks} 
+              component={Bookmarks}
             />
           </Switch>
         </div>
