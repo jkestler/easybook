@@ -40,15 +40,10 @@ import logoLogout from '../assets/img/logo_transparent_white.png';
 
       ) : (
         <nav className='navbar navbar-expand-lg fixed-top' >
-          <a href='/bookmarks' className='navbar-brand'><img id='logoutLogo' src={logoLogout} alt='logo' /></a>
-          <Link to='/signin' className='nav-link landing-nav '> Log In </Link>
+          <a href='/' className='navbar-brand'><img id='logoutLogo' src={logoLogout} alt='logo' /></a>
+          <Link to='/signin' className='nav-link landing-nav mr-0 '> Log In </Link>
           <Link to='/signup' className='nav-link'> Sign Up</Link>
         </nav>
-       /* <nav class="navbar navbar-expand-lg fixed-top ">
-        <a class="navbar-brand" href="/"><img id='logoutLogo' src={logoLogout} alt='logo' /></a>
-        <Link to='/signup' class="nav-link navigation"  href="/">Sign Up</Link> 
-        <Link to='/signin' class="nav-link navigation"  href="/">Log In</Link>
-       </nav> */
       )
 
       
