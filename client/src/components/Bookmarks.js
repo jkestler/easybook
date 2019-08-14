@@ -170,9 +170,9 @@ class Bookmarks extends Component {
                   value={this.state.searchValue}
                   data={this.state.allBookmarks}
                   renderResults={results => (
-                    <div> 
+                    <div className='search-results'> 
                       { results.map(bookmark => (
-                          <div className='bookmark-box' onClick={() => this.showBookmark(bookmark.id)} >  
+                          <div className='bookmark-box' key={bookmark.id} onClick={() => this.showBookmark(bookmark.id)} >  
                             <div className='bookmark-card' style={{backgroundImage: `url(${bookmark.screenshot}), url('https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image')`}}>
                               {/* <div id='bookmark-img' className='card-body'>
                               </div> */}
@@ -187,10 +187,9 @@ class Bookmarks extends Component {
               : 
 
               this.state.folderBookmarks.map((bookmark, index) => (    
+
                 <div className='bookmark-box' key={index} onClick={() => this.showBookmark(bookmark.id)} >  
                   <div className='bookmark-card' style={{backgroundImage: `url(${bookmark.screenshot}), url('https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image')`}}>
-                    {/* <div id='bookmark-img' className='card-body'>
-                    </div> */}
                   </div>
                   <h6 className='m-0 card-title'> <em> { bookmark.title } </em> </h6>
                 </div>
