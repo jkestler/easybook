@@ -18,7 +18,7 @@ class App extends Component {
       loggedIn: false,
       email: null,
       id: null,
-      toggle: true
+      toggle: false
     }
 
   }
