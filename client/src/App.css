@@ -67,7 +67,7 @@ Body {
 
 @media (max-width: 750px ) {
   .description {
-    min-width: 100%;
+    width: 100%;
     min-height: 25%;  
     margin-bottom: 20px !important;
     background-color: #2f2bff2f; 
