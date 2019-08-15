@@ -46,9 +46,6 @@ class App extends Component {
     localStorage.setItem('loggedIn', true);
     localStorage.setItem('email', this.state.email);
     localStorage.setItem('id', this.state.id);
-    // if (this.state.loggedIn) {
-    //   localStorage.setItem('loggedIn', true);
-    // }
   }
 
   signOut = () => {
@@ -67,9 +64,6 @@ class App extends Component {
   toggleClass = () => {
     this.state.toggle ? this.setState({ toggle: false }) : this.setState({ toggle: true})
   }
-
-
-
 
   render() {
     return (
