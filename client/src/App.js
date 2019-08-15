@@ -67,7 +67,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter basename="/bookmarks">
+      <BrowserRouter basename="/">
         <div className="App">
           <NavBar loggedIn={this.state.loggedIn} toggleClass={() => this.toggleClass()} signoutUser={() => this.signOut()}  />
           <Switch> 
@@ -87,7 +87,7 @@ class App extends Component {
               />}
             />  
             <Route 
-              exact path='/bookmark' 
+              exact path='/bookmarks' 
               render={() => 
                 <Bookmarks
                   toggle={this.state.toggle}
