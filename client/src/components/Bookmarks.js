@@ -59,10 +59,12 @@ class Bookmarks extends Component {
             userFolders: res.data.result.user.folders,
             userBookmarks: res.data.result.user.folders.bookmarks
           })
-          axios.get(`/folders/${JSON.parse(localStorage.getItem('folderId'))}`)
-            .then((folders) => {
-              console.log(this.state);
-            });
+          if (this.state.userFolders) {
+            axios.get(`/folders/${JSON.parse(localStorage.getItem('folderId'))}`)
+              .then((folders) => {
+                console.log(this.state);
+              });
+          }
         });
   }
 
