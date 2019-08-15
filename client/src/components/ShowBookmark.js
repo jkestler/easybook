@@ -27,7 +27,7 @@ class ShowBookmark extends React.Component {
            <h6> Description: </h6>
            <h4>  <em>{this.props.bookmarkDescription } </em></h4>
            <img id='show-bookmark-img' src={this.props.bookmarkScreenshot} alt='screenshot' />
-           <Link target='_blank' to={this.props.bookmarkUrl}> <h4> {this.props.bookmarkUrl} </h4> </Link>
+           <Link to={{pathname: this.props.bookmarkUrl}}> <h4> {this.props.bookmarkUrl} </h4> </Link>
           </ModalBody>
           <button className='btn btn-primary' onClick={this.props.toggleShowBookmark}> Close </button> 
         </Modal>

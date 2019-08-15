@@ -35,6 +35,9 @@ class AddBookmark extends React.Component {
         this.props.updateSearch(bookmarks.data.bookmarks);
       })
     })
+    .catch((err) => {
+      console.log(err);
+    })
 
   }
 
@@ -65,12 +68,12 @@ class AddBookmark extends React.Component {
           <ModalHeader className='m-auto'> Add Bookmark </ModalHeader>
           <ModalBody>
             <form className="form-inline list-group my-lg-0" id='search-input' onSubmit={this.handleSubmit}>
-              <input className="form-control m-1" type="text" placeholder="Title" name='title' onChange={this.handleChange} value={this.state.title} />
-              <input className="form-control m-1" type="text" placeholder="URL" name='url' onChange={this.handleChange} value={this.state.url}/>
-              <textarea id='textarea' rows='2' className="form-control m-1" type="text" name ='description' placeholder="Description" onChange={this.handleChange} value={this.state.description}/>
+              <input className="form-control m-1" type="text" placeholder="Title (required)" name='title' onChange={this.handleChange} value={this.state.title} />
+              <input className="form-control m-1" type="text" placeholder="URL (required)" name='url' onChange={this.handleChange} value={this.state.url}/>
+              <textarea id='textarea' rows='2' className="form-control m-1" type="text" name ='description' placeholder="Description (optional)" onChange={this.handleChange} value={this.state.description}/>
               <input className="form-control m-1" type="text" placeholder="Screenshot URL (optional)" name='screenshot' onChange={this.handleChange} value={this.state.screenshot} />
               <select id='folderSelect' className='custom-select my-lg-0' onChange={this.handleSelectChange}>
-                <option defaultValue> Choose folder...</option>
+                <option defaultValue> Choose folder (required)...</option>
                 {
                   this.props.userFolders.map((folder, index) => (
                     <option key={index} name='folderId' value={folder.id} > { folder.folderName } </option>
