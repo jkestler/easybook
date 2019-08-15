@@ -183,8 +183,6 @@ class Bookmarks extends Component {
                       { results.map(bookmark => (
                           <div className='bookmark-box' key={bookmark.id} onClick={() => this.showBookmark(bookmark.id)} >  
                             <div className='bookmark-card' style={{backgroundImage: `url(${bookmark.screenshot}), url('https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image')`}}>
-                              {/* <div id='bookmark-img' className='card-body'>
-                              </div> */}
                             </div>
                             <h6 className='m-0 card-title'>  { bookmark.title } </h6> 
                           </div>

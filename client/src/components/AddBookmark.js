@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React from 'react';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import axios from 'axios';
 
 

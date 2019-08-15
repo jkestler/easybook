@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import axios from 'axios';
+import React  from 'react';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 class ShowBookmark extends React.Component {
@@ -27,7 +27,7 @@ class ShowBookmark extends React.Component {
            <h6> Description: </h6>
            <h4>  <em>{this.props.bookmarkDescription } </em></h4>
            <img id='show-bookmark-img' src={this.props.bookmarkScreenshot} alt='screenshot' />
-           <a target='_blank' rel='noopener noreferrer' href={this.props.bookmarkUrl}> <h4> {this.props.bookmarkUrl} </h4> </a>
+           <Link target='_blank' to={this.props.bookmarkUrl}> <h4> {this.props.bookmarkUrl} </h4> </Link>
           </ModalBody>
           <button className='btn btn-primary' onClick={this.props.toggleShowBookmark}> Close </button> 
         </Modal>
