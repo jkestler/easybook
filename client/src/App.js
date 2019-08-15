@@ -67,7 +67,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter basename="/">
+      <BrowserRouter basename="/bookmarks">
         <div className="App">
           <NavBar loggedIn={this.state.loggedIn} toggleClass={() => this.toggleClass()} signoutUser={() => this.signOut()}  />
           <Switch> 
