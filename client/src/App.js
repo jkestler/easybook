@@ -87,7 +87,7 @@ class App extends Component {
               />}
             />  
             <Route 
-              path='/bookmarks' 
+              exact path='/bookmark' 
               render={() => 
                 <Bookmarks
                   toggle={this.state.toggle}
