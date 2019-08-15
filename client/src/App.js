@@ -7,7 +7,7 @@ import NavBar from './components/NavBar.js';
 import SignupForm from './components/Signup.js';
 import LoginForm from './components/Login.js';
 import Bookmarks from './components/Bookmarks.js';
-// import { Redirect } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -67,7 +67,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter basename="/">
+      <HashRouter>
         <div className="App">
           <NavBar loggedIn={this.state.loggedIn} toggleClass={() => this.toggleClass()} signoutUser={() => this.signOut()}  />
           <Switch> 
@@ -95,7 +95,7 @@ class App extends Component {
             />
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
