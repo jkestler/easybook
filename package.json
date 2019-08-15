@@ -42,6 +42,7 @@
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.2",
     "popper.js": "^1.15.0",
+    "prefix": "^1.0.0",
     "react": "^16.8.6",
     "react-animate-on-scroll": "^2.1.5",
     "react-animations": "^1.0.0",
