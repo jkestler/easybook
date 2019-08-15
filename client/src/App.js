@@ -67,7 +67,7 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter>
+      <HashRouter basename="/">
         <div className="App">
           <NavBar loggedIn={this.state.loggedIn} toggleClass={() => this.toggleClass()} signoutUser={() => this.signOut()}  />
           <Switch> 

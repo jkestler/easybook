@@ -261,6 +261,8 @@ Body {
 
 .bookmark-box {
   opacity: .91;
+  /* margin-left: auto; */
+  /* padding-left: 1%; */
 }
 
 .bookmark-box:hover {
@@ -284,15 +286,29 @@ Body {
 
 @media (max-width: 1264px) {
   .bookmark-card {
-    margin: auto 25px;
-    width: 200px;
+    /* margin: auto 45px; */
+    /* width: 200px; */
+  }
+  .bookmark-box {
+    /* width: 100; */
+    /* margin: 5px; */
+    margin-left: auto;
+    padding-left: 2px;
   }
 }
+
 @media (max-width: 1080px) {
   .bookmark-card {
     /* height: 1px; */
+    /* min-width: %; */
     margin-top: 0;
-    margin-left:5px; 
+    margin-left:10px; 
+    /* width: 100%; */
+  }
+
+  .bookmark-box {
+    padding-left: 20px;
+    margin-left: auto;
   }
   
 }
@@ -311,15 +327,27 @@ Body {
 
 @media(max-width: 805px) {
   .bookmark-card {
-    width: 130px;
-    margin: auto;
+    /* width: 130px; */
+    margin-top: auto;
+
+    /* margin: auto; */
+  }
+
+  .bookmark-box {
+    /* margin: auto; */ 
+    padding: 0;
+    /* margin: 55px auto 0 0; */
+    /* width: auto; */
   }
 }
 
 @media(max-width: 510px) {
   .bookmark-card {
-    margin-left: 20px;
-    width: 100px;
+    /* margin-left: 20px; */
+    /* margin: 20px; */
+  }
+  .bookmark-box {
+    width: auto;
   }
 }
 .card-title {
