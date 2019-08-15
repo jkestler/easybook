@@ -51,6 +51,9 @@ class Bookmarks extends Component {
         });
         console.log('ALL BOOKMARKS', this.state.allBookmarks);
       })
+      .catch((err) => {
+        console.log(err);
+      })
       axios.get(`/user/${JSON.parse(localStorage.getItem('id'))}`)
         .then(res => {
           console.log('RES.DATA', res);
@@ -59,13 +62,19 @@ class Bookmarks extends Component {
             userFolders: res.data.result.user.folders,
             userBookmarks: res.data.result.user.folders.bookmarks
           })
-          if (this.state.userFolders) {
-            axios.get(`/folders/${JSON.parse(localStorage.getItem('folderId'))}`)
-              .then((folders) => {
-                console.log(this.state);
-              });
-          }
-        });
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        if (this.state.userFolders) {
+          axios.get(`/folders/${JSON.parse(localStorage.getItem('folderId'))}`)
+            .then((folders) => {
+              console.log(this.state);
+            })
+            .catch((err) => {
+              console.log(err);
+            })
+        }
   }
 
   updateSearch = (bookmarks) => {
