@@ -50,7 +50,7 @@ Use this test account to see easyBook in action:
 
 6. You can run the client or server by themselves or run both together with the following commands.
 
-#### Togeter
+#### Together
 ```sh
 npm run dev
 ```
