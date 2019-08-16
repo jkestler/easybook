@@ -6,8 +6,14 @@ A visually oriented bookmarking app to help boost your productivity.
 [Heroku App](https://jkestler-easybook.herokuapp.com/)
 
 Use this test account to see easyBook in action: 
-email:     testemail@gmail.com
-password:  testing123
+
+**email:**   
+
+`testemail@gmail.com`
+
+**password:**  
+
+`testing123`
 
 
 ## Build Setup
