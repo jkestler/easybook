@@ -62,7 +62,7 @@ const Landing = (props) => {
         <footer id='footer'>
           <div className='m-0'>
             <div className="footer-copyright text-center">A 2019 Bloc.io Capstone Project:
-              <Link target='_blank' to="https://github.com/jkestler/easybook"><span className='github-link'><em> View on Github</em> </span></Link>
+              <a rel="noreferrer noopener" target='_blank' href="https://github.com/jkestler/easybook"><span className='github-link'><em> View on Github</em> </span></a>
             </div>
           </div>
         </footer>
