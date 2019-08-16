@@ -1,20 +1,25 @@
-# one-cart
-A real-time shopping app that syncs shopping items on all your devices
+# easyBook
+A visually oriented bookmarking app to help boost your productivity.
 
 
 ### Live DEMO
-[Heroku App](https://lorenz21-one-cart.herokuapp.com/)
+[Heroku App](https://jkestler-easybook.herokuapp.com/)
+
+Use this test account to see easyBook in action: 
+email:     testemail@gmail.com
+password:  testing123
+
 
 ## Build Setup
 
 1. Clone the repository
   ```sh
-  git clone https://github.com/lorenz21/one-cart.git
+  git clone https://github.com/jkestler/easybook.git
   ```
 
 2. Change Directories into the project
   ```sh
-  cd one-cart
+  cd easybook
   ```
 
 3. Install dependencies for Client and Server
